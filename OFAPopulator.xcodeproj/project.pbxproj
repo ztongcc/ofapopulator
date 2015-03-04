@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		644676B61AA50163005B456C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676B51AA50163005B456C /* main.m */; };
+		644676B91AA50163005B456C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676B81AA50163005B456C /* AppDelegate.m */; };
+		644676BC1AA50163005B456C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676BB1AA50163005B456C /* ViewController.m */; };
+		644676BF1AA50163005B456C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644676BD1AA50163005B456C /* Main.storyboard */; };
+		644676C11AA50163005B456C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644676C01AA50163005B456C /* Images.xcassets */; };
+		644676C41AA50163005B456C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644676C21AA50163005B456C /* LaunchScreen.xib */; };
+		644676D01AA50163005B456C /* OFAPopulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676CF1AA50163005B456C /* OFAPopulatorTests.m */; };
+		644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676DA1AA501DA005B456C /* OFASectionPopulator.m */; };
+		644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataFetcher.m */; };
+		644676E41AA508E1005B456C /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */; };
+		644676E71AA50E9D005B456C /* OFASectionedPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E61AA50E9D005B456C /* OFASectionedPopulator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		644676CA1AA50163005B456C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 644676A81AA50163005B456C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 644676AF1AA50163005B456C;
+			remoteInfo = OFAPopulator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		644676B01AA50163005B456C /* OFAPopulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFAPopulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		644676B41AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		644676B51AA50163005B456C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		644676B71AA50163005B456C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		644676B81AA50163005B456C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		644676BA1AA50163005B456C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		644676BB1AA50163005B456C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		644676BE1AA50163005B456C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		644676C01AA50163005B456C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		644676C31AA50163005B456C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		644676C91AA50163005B456C /* OFAPopulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFAPopulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		644676CE1AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		644676CF1AA50163005B456C /* OFAPopulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFAPopulatorTests.m; sourceTree = "<group>"; };
+		644676D91AA501DA005B456C /* OFASectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionPopulator.h; sourceTree = "<group>"; };
+		644676DA1AA501DA005B456C /* OFASectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFASectionPopulator.m; sourceTree = "<group>"; };
+		644676DC1AA5027F005B456C /* OFADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFADataFetcher.h; sourceTree = "<group>"; };
+		644676DF1AA50609005B456C /* ExampleDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDataFetcher.h; sourceTree = "<group>"; };
+		644676E01AA50609005B456C /* ExampleDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataFetcher.m; sourceTree = "<group>"; };
+		644676E21AA508E1005B456C /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
+		644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
+		644676E51AA50E9D005B456C /* OFASectionedPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionedPopulator.h; sourceTree = "<group>"; };
+		644676E61AA50E9D005B456C /* OFASectionedPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFASectionedPopulator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		644676AD1AA50163005B456C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644676C61AA50163005B456C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		644676A71AA50163005B456C = {
+			isa = PBXGroup;
+			children = (
+				644676B21AA50163005B456C /* OFAPopulator */,
+				644676CC1AA50163005B456C /* OFAPopulatorTests */,
+				644676B11AA50163005B456C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		644676B11AA50163005B456C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				644676B01AA50163005B456C /* OFAPopulator.app */,
+				644676C91AA50163005B456C /* OFAPopulatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		644676B21AA50163005B456C /* OFAPopulator */ = {
+			isa = PBXGroup;
+			children = (
+				644676B71AA50163005B456C /* AppDelegate.h */,
+				644676B81AA50163005B456C /* AppDelegate.m */,
+				644676BA1AA50163005B456C /* ViewController.h */,
+				644676BB1AA50163005B456C /* ViewController.m */,
+				644676DF1AA50609005B456C /* ExampleDataFetcher.h */,
+				644676E01AA50609005B456C /* ExampleDataFetcher.m */,
+				644676BD1AA50163005B456C /* Main.storyboard */,
+				644676C01AA50163005B456C /* Images.xcassets */,
+				644676C21AA50163005B456C /* LaunchScreen.xib */,
+				644676B31AA50163005B456C /* Supporting Files */,
+				644676D91AA501DA005B456C /* OFASectionPopulator.h */,
+				644676DA1AA501DA005B456C /* OFASectionPopulator.m */,
+				644676DC1AA5027F005B456C /* OFADataFetcher.h */,
+				644676E21AA508E1005B456C /* OFATableViewSectionPopulator.h */,
+				644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */,
+				644676E51AA50E9D005B456C /* OFASectionedPopulator.h */,
+				644676E61AA50E9D005B456C /* OFASectionedPopulator.m */,
+			);
+			path = OFAPopulator;
+			sourceTree = "<group>";
+		};
+		644676B31AA50163005B456C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				644676B41AA50163005B456C /* Info.plist */,
+				644676B51AA50163005B456C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		644676CC1AA50163005B456C /* OFAPopulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				644676CF1AA50163005B456C /* OFAPopulatorTests.m */,
+				644676CD1AA50163005B456C /* Supporting Files */,
+			);
+			path = OFAPopulatorTests;
+			sourceTree = "<group>";
+		};
+		644676CD1AA50163005B456C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				644676CE1AA50163005B456C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		644676AF1AA50163005B456C /* OFAPopulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 644676D31AA50163005B456C /* Build configuration list for PBXNativeTarget "OFAPopulator" */;
+			buildPhases = (
+				644676AC1AA50163005B456C /* Sources */,
+				644676AD1AA50163005B456C /* Frameworks */,
+				644676AE1AA50163005B456C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OFAPopulator;
+			productName = OFAPopulator;
+			productReference = 644676B01AA50163005B456C /* OFAPopulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		644676C81AA50163005B456C /* OFAPopulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 644676D61AA50163005B456C /* Build configuration list for PBXNativeTarget "OFAPopulatorTests" */;
+			buildPhases = (
+				644676C51AA50163005B456C /* Sources */,
+				644676C61AA50163005B456C /* Frameworks */,
+				644676C71AA50163005B456C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				644676CB1AA50163005B456C /* PBXTargetDependency */,
+			);
+			name = OFAPopulatorTests;
+			productName = OFAPopulatorTests;
+			productReference = 644676C91AA50163005B456C /* OFAPopulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		644676A81AA50163005B456C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = com.vs;
+				TargetAttributes = {
+					644676AF1AA50163005B456C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					644676C81AA50163005B456C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 644676AF1AA50163005B456C;
+					};
+				};
+			};
+			buildConfigurationList = 644676AB1AA50163005B456C /* Build configuration list for PBXProject "OFAPopulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 644676A71AA50163005B456C;
+			productRefGroup = 644676B11AA50163005B456C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				644676AF1AA50163005B456C /* OFAPopulator */,
+				644676C81AA50163005B456C /* OFAPopulatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		644676AE1AA50163005B456C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644676BF1AA50163005B456C /* Main.storyboard in Resources */,
+				644676C41AA50163005B456C /* LaunchScreen.xib in Resources */,
+				644676C11AA50163005B456C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644676C71AA50163005B456C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		644676AC1AA50163005B456C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644676BC1AA50163005B456C /* ViewController.m in Sources */,
+				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
+				644676E41AA508E1005B456C /* OFATableViewSectionPopulator.m in Sources */,
+				644676E71AA50E9D005B456C /* OFASectionedPopulator.m in Sources */,
+				644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */,
+				644676B91AA50163005B456C /* AppDelegate.m in Sources */,
+				644676B61AA50163005B456C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		644676C51AA50163005B456C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644676D01AA50163005B456C /* OFAPopulatorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		644676CB1AA50163005B456C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 644676AF1AA50163005B456C /* OFAPopulator */;
+			targetProxy = 644676CA1AA50163005B456C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		644676BD1AA50163005B456C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644676BE1AA50163005B456C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		644676C21AA50163005B456C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644676C31AA50163005B456C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		644676D11AA50163005B456C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		644676D21AA50163005B456C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		644676D41AA50163005B456C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OFAPopulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		644676D51AA50163005B456C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OFAPopulator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		644676D71AA50163005B456C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OFAPopulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OFAPopulator.app/OFAPopulator";
+			};
+			name = Debug;
+		};
+		644676D81AA50163005B456C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OFAPopulatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OFAPopulator.app/OFAPopulator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		644676AB1AA50163005B456C /* Build configuration list for PBXProject "OFAPopulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644676D11AA50163005B456C /* Debug */,
+				644676D21AA50163005B456C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		644676D31AA50163005B456C /* Build configuration list for PBXNativeTarget "OFAPopulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644676D41AA50163005B456C /* Debug */,
+				644676D51AA50163005B456C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		644676D61AA50163005B456C /* Build configuration list for PBXNativeTarget "OFAPopulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644676D71AA50163005B456C /* Debug */,
+				644676D81AA50163005B456C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 644676A81AA50163005B456C /* Project object */;
+}
