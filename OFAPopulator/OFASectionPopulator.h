@@ -9,13 +9,14 @@
 @import UIKit;
 #import "OFADataFetcher.h"
 
-@protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate>//, UICollectionViewDataSource, UICollectionViewDelegate>
+@protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 
 @end
 
 
-@interface OFASectionPopulator : NSObject <OFASectionPopulator>
+@interface OFASectionPopulator : NSProxy <OFASectionPopulator>
+
 -(instancetype) initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
                           cellClass:(Class) cellClass

@@ -6,13 +6,10 @@
 //  Copyright (c) 2015 com.vs. All rights reserved.
 //
 
-#import "OFASectionPopulator.h"
+#import "OFAAbstractSectionPopulator.h"
 
-@interface OFATableViewSectionPopulator : NSObject <OFASectionPopulator>
+@interface OFATableViewSectionPopulator : OFAAbstractSectionPopulator
 @property(nonatomic, weak) UITableView *parentView;
-
-@property (nonatomic, strong) id<OFADataFetcher> dataFetcher;
-@property (nonatomic, copy) NSString* (^cellIdentifier)(id obj, NSIndexPath *indexPath);
 @property (nonatomic, copy) void (^cellConfigurator)(id, UITableViewCell *, NSIndexPath *);
 
 -(instancetype)initWithParentView:(UITableView *)parentView
@@ -20,4 +17,5 @@
                         cellClass:(Class)cellClass
                    cellIdentifier:(NSString* (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                  cellConfigurator:(void (^)(id, UITableViewCell *, NSIndexPath *))cellConfigurator;
+
 @end

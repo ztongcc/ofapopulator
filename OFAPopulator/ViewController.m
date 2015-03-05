@@ -24,11 +24,12 @@
     OFASectionPopulator *section1Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UITableViewCell class]
-                                                                              cellIdentifier:^NSString* (id obj, NSIndexPath *indexPath){ return @"Section1"; }
+                                                                              cellIdentifier:^NSString* (id obj, NSIndexPath *indexPath){ return  indexPath.row % 2  ? @"Section1_1" : @"Section1_2" ; }
                                                                             cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
     {
         UITableViewCell *cell = (UITableViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
@@ -39,6 +40,7 @@
     {
         UITableViewCell *cell = (UITableViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
+        cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
 
     

@@ -8,9 +8,12 @@
 
 #import "OFASectionPopulator.h"
 #import "OFATableViewSectionPopulator.h"
+#import "OFACollectionViewSectionPopulator.h"
 
 @interface OFASectionPopulator ()
 @property (nonatomic, strong) OFATableViewSectionPopulator *tableViewPopulator;
+@property (nonatomic, strong) OFACollectionViewSectionPopulator *collectionViewPopulator;
+
 
 @end
 
@@ -21,7 +24,6 @@
                      cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
                    cellConfigurator:(void (^)(id, UIView *, NSIndexPath *))cellConfigurator
 {
-    self = [super init];
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
             _tableViewPopulator = [[OFATableViewSectionPopulator alloc] initWithParentView:(UITableView *)parentView
@@ -29,25 +31,35 @@
                                                                                  cellClass:cellClass
                                                                             cellIdentifier:cellIdentifier
                                                                           cellConfigurator:cellConfigurator];
+        } else if([parentView isKindOfClass:[UICollectionView class]]){
+            _collectionViewPopulator = [[OFACollectionViewSectionPopulator alloc] initWithParentView:(UICollectionView *)parentView
+                                                                                         dataFetcher:dataFetcher
+                                                                                           cellClass:cellClass
+                                                                                      cellIdentifier:cellIdentifier
+                                                                                    cellConfigurator:cellConfigurator];
         }
     }
-    
     return self;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
 {
-    return 1;
+    return [[self activeTaget] methodSignatureForSelector:selector];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)forwardInvocation:(NSInvocation *)invocation
 {
-    return [self.tableViewPopulator tableView:tableView numberOfRowsInSection:section];
+    if ([[self activeTaget] respondsToSelector: invocation.selector]) {
+        [invocation invokeWithTarget:[self activeTaget]];
+    }
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+-(id) activeTaget
 {
-    return [self.tableViewPopulator tableView:tableView cellForRowAtIndexPath:indexPath];
+    return (_tableViewPopulator) ?:_collectionViewPopulator;
 }
+
 
 @end

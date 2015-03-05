@@ -1,20 +1,20 @@
 //
-//  OFATableViewSectionPopulator.m
+//  OFACollectionViewSectionPopulator.m
 //  OFAPopulator
 //
-//  Created by Manuel Meyer on 02.03.15.
+//  Created by Manuel Meyer on 05/03/15.
 //  Copyright (c) 2015 com.vs. All rights reserved.
 //
 
-#import "OFATableViewSectionPopulator.h"
+#import "OFACollectionViewSectionPopulator.h"
 
-@implementation OFATableViewSectionPopulator
+@implementation OFACollectionViewSectionPopulator
 
--(instancetype)initWithParentView:(UITableView *)parentView
+-(instancetype)initWithParentView:(UICollectionView *)parentView
                       dataFetcher:(id<OFADataFetcher>)dataFetcher
                         cellClass:(Class)cellClass
                    cellIdentifier:(NSString* (^)(id obj, NSIndexPath *indexPath))cellIdentifier
-                 cellConfigurator:(void (^)(id, UITableViewCell *, NSIndexPath *))cellConfigurator
+                 cellConfigurator:(void (^)(id, UICollectionViewCell *, NSIndexPath *))cellConfigurator
 {
     if (self = [super init]) {
         _parentView = parentView;
@@ -30,18 +30,16 @@
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return [[self.dataFetcher sectionObjects] count];
 }
 
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier([self.dataFetcher sectionObjects][indexPath.row], indexPath) forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.cellIdentifier([self.dataFetcher sectionObjects][indexPath.row], indexPath)  forIndexPath:indexPath];
+    
     self.cellConfigurator([self.dataFetcher sectionObjects][indexPath.row], cell, indexPath);
     return cell;
 }
-
-
 @end

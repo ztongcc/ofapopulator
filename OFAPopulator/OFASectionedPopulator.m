@@ -26,6 +26,9 @@
         if ([_parentView isKindOfClass:[UITableView class]]) {
             UITableView *tv = (UITableView *)_parentView;
             tv.dataSource = self;
+        } else if ([_parentView isKindOfClass:[UICollectionView class]]){
+            UICollectionView *cv = (UICollectionView *)_parentView;
+            cv.dataSource = self;
         }
     }
     return self;
@@ -46,6 +49,28 @@
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop tableView:tableView cellForRowAtIndexPath:indexPath];
+
+}
+
+
+
+
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.populators.count;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    id<OFASectionPopulator> pop = self.populators[section];
+    return [pop collectionView:collectionView numberOfItemsInSection:section];
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    return [pop collectionView:collectionView cellForItemAtIndexPath:indexPath];
 
 }
 
