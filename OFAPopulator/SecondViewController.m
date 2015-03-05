@@ -24,16 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
     OFASectionPopulator *section1Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[ExampleCollectionViewCell class]
                                                                               cellIdentifier:^NSString* (id obj, NSIndexPath *indexPath){ return  indexPath.row % 2  ? @"cell" : @"cell2" ; }
                                                                             cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
-                                              {
-                                                  ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
-                                                  cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
-                                              }];
+    {
+        ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
+    }];
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
@@ -48,9 +47,6 @@
     
     self.populator = [[OFASectionedPopulator alloc] initWithParentView:self.collectionView
                                                      sectionPopulators:@[section1Populator, section2Populator]];
-
-    
-    
 }
 
 
