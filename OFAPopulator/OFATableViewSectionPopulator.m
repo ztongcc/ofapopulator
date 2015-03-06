@@ -44,4 +44,24 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.objectOnCellSelected) {
+        self.objectOnCellSelected(
+                                    [self.dataFetcher sectionObjects][indexPath.row],
+                                    [tableView cellForRowAtIndexPath:indexPath],
+                                    indexPath
+                                  );
+    };
+}
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.objectOnCellSelected) {
+        self.objectOnCellSelected(
+                                  [self.dataFetcher sectionObjects][indexPath.row],
+                                  [tableView cellForRowAtIndexPath:indexPath],
+                                  indexPath
+                                  );
+    };
+}
 @end

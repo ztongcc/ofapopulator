@@ -35,6 +35,12 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
     }];
 
+    section1Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath)
+    {
+        ExampleCollectionViewCell *cvc = (ExampleCollectionViewCell *)cell;
+        cvc.textLabel.text = [cvc.textLabel.text stringByAppendingString:@"*"];
+     };
+    
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UICollectionViewCell class]
@@ -44,9 +50,11 @@
         ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
     }];
+    
 
     self.populator = [[OFAViewPopulator alloc] initWithParentView:self.collectionView
                                                 sectionPopulators:@[section1Populator, section2Populator]];
+    
 }
 
 @end

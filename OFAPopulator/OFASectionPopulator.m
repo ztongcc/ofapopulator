@@ -17,6 +17,7 @@
 @end
 
 @implementation OFASectionPopulator
+
 - (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
                          cellClass:(Class)cellClass
@@ -58,4 +59,9 @@
     return (_tableViewPopulator) ? : _collectionViewPopulator;
 }
 
+
+-(void)setObjectOnCellSelected:(void (^)(id, UIView *, NSIndexPath *))objectOnCellSelected
+{
+    [[self activeTaget] setObjectOnCellSelected:objectOnCellSelected];
+}
 @end

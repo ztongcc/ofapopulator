@@ -9,7 +9,7 @@
 #import "OFAAbstractSectionPopulator.h"
 
 @implementation OFAAbstractSectionPopulator
-
+@synthesize objectOnCellSelected = _objectOnCellSelected;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 0;

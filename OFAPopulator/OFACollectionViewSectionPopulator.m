@@ -9,6 +9,7 @@
 #import "OFACollectionViewSectionPopulator.h"
 
 @implementation OFACollectionViewSectionPopulator
+@synthesize objectOnCellSelected = _objectOnCellSelected;
 
 - (instancetype)initWithParentView:(UICollectionView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
@@ -41,6 +42,20 @@
 
     self.cellConfigurator([self.dataFetcher sectionObjects][indexPath.row], cell, indexPath);
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.objectOnCellSelected) {
+        self.objectOnCellSelected([self.dataFetcher sectionObjects][indexPath.row], [collectionView cellForItemAtIndexPath:indexPath], indexPath);
+    }
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.objectOnCellSelected) {
+        self.objectOnCellSelected([self.dataFetcher sectionObjects][indexPath.row], [collectionView cellForItemAtIndexPath:indexPath], indexPath);
+    }
 }
 
 @end

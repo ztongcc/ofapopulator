@@ -25,14 +25,19 @@
         if ([_parentView isKindOfClass:[UITableView class]]) {
             UITableView *tv = (UITableView *)_parentView;
             tv.dataSource = self;
+            tv.delegate = self;
+            tv.allowsMultipleSelection = YES;
         } else if ([_parentView isKindOfClass:[UICollectionView class]]) {
             UICollectionView *cv = (UICollectionView *)_parentView;
             cv.dataSource = self;
+            cv.delegate = self;
+            cv.allowsMultipleSelection = YES;
         }
     }
     return self;
 }
 
+#pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.populators.count;
@@ -50,6 +55,22 @@
     return [pop tableView:tableView cellForRowAtIndexPath:indexPath];
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    [pop tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    [pop tableView:tableView didDeselectRowAtIndexPath:indexPath];
+    
+}
+#pragma mark - collectionview
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return self.populators.count;
@@ -65,6 +86,18 @@
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop collectionView:collectionView cellForItemAtIndexPath:indexPath];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    return [pop collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    return [pop collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
 }
 
 @end

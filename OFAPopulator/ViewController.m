@@ -29,10 +29,22 @@
                                                                             cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
     {
         UITableViewCell *cell = (UITableViewCell *)view;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
 
+    
+    section1Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
+        UITableViewCell *tvc = (UITableViewCell *)cell;
+        if (tvc.isSelected) {
+            [tvc setAccessoryType:UITableViewCellAccessoryCheckmark];
+        } else {
+            [tvc setAccessoryType:UITableViewCellAccessoryNone];
+        }
+    };
+    
+    
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UITableViewCell class]

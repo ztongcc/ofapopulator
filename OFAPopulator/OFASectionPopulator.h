@@ -11,6 +11,9 @@
 
 @protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
+@optional
+@property (nonatomic, copy) void (^objectOnCellSelected)(id obj, UIView *cell, NSIndexPath *indexPath);
+
 @end
 
 @interface OFASectionPopulator : NSProxy <OFASectionPopulator>
