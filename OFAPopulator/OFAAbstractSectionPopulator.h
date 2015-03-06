@@ -11,5 +11,5 @@
 
 @interface OFAAbstractSectionPopulator : NSObject <OFASectionPopulator>
 @property (nonatomic, strong) id<OFADataFetcher> dataFetcher;
-@property (nonatomic, copy) NSString* (^cellIdentifier)(id obj, NSIndexPath *indexPath);
+@property (nonatomic, copy) NSString * (^cellIdentifier)(id obj, NSIndexPath *indexPath);
 @end

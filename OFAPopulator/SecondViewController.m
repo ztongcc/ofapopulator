@@ -15,39 +15,38 @@
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) OFAViewPopulator *populator;
+@property (nonatomic, strong) OFAViewPopulator        *populator;
 
 @end
 
 @implementation SecondViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     OFASectionPopulator *section1Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[ExampleCollectionViewCell class]
-                                                                              cellIdentifier:^NSString* (id obj, NSIndexPath *indexPath){ return  indexPath.row % 2  ? @"cell" : @"cell2" ; }
+                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return indexPath.row % 2 ? @"cell" : @"cell2"; }
                                                                             cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
     {
         ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
     }];
-    
+
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UICollectionViewCell class]
-                                                                              cellIdentifier:^NSString* (id obj, NSIndexPath *indexPath){ return @"cell2"; }
+                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"cell2"; }
                                                                             cellConfigurator:^(NSNumber *obj, UIView *view, NSIndexPath *indexPath)
-                                              {
-                                                  ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
-                                                  cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
-                                              }];
-    
-    
-    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.collectionView
-                                                     sectionPopulators:@[section1Populator, section2Populator]];
-}
+    {
+        ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
+    }];
 
+    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.collectionView
+                                                sectionPopulators:@[section1Populator, section2Populator]];
+}
 
 @end

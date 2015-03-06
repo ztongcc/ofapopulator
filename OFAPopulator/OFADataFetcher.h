@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @protocol OFADataFetcher <NSObject>
--(NSArray *)sectionObjects;
+- (NSArray *)sectionObjects;
 @end
 

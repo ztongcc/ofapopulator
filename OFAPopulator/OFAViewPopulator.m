@@ -10,23 +10,22 @@
 #import "OFASectionPopulator.h"
 
 @interface OFAViewPopulator ()
-@property (nonatomic, weak) UIView *parentView;
+@property (nonatomic, weak) UIView    *parentView;
 @property (nonatomic, strong) NSArray *populators;
 @end
 
-
 @implementation OFAViewPopulator
--(instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
+- (instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
 {
     self = [super init];
     if (self) {
         _parentView = parentView;
         _populators = populators;
-        
+
         if ([_parentView isKindOfClass:[UITableView class]]) {
             UITableView *tv = (UITableView *)_parentView;
             tv.dataSource = self;
-        } else if ([_parentView isKindOfClass:[UICollectionView class]]){
+        } else if ([_parentView isKindOfClass:[UICollectionView class]]) {
             UICollectionView *cv = (UICollectionView *)_parentView;
             cv.dataSource = self;
         }
@@ -34,44 +33,38 @@
     return self;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.populators.count;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id<OFASectionPopulator> pop = self.populators[section];
     return [pop tableView:tableView numberOfRowsInSection:section];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop tableView:tableView cellForRowAtIndexPath:indexPath];
-
 }
 
-
-
-
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return self.populators.count;
 }
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     id<OFASectionPopulator> pop = self.populators[section];
     return [pop collectionView:collectionView numberOfItemsInSection:section];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop collectionView:collectionView cellForItemAtIndexPath:indexPath];
-
 }
 
 @end

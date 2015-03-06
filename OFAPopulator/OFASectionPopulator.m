@@ -11,18 +11,17 @@
 #import "OFACollectionViewSectionPopulator.h"
 
 @interface OFASectionPopulator ()
-@property (nonatomic, strong) OFATableViewSectionPopulator *tableViewPopulator;
+@property (nonatomic, strong) OFATableViewSectionPopulator      *tableViewPopulator;
 @property (nonatomic, strong) OFACollectionViewSectionPopulator *collectionViewPopulator;
-
 
 @end
 
 @implementation OFASectionPopulator
 - (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
-                          cellClass:(Class)cellClass
-                     cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
-                   cellConfigurator:(void (^)(id, UIView *, NSIndexPath *))cellConfigurator
+                         cellClass:(Class)cellClass
+                    cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
+                  cellConfigurator:(void (^)(id, UIView *, NSIndexPath *))cellConfigurator
 {
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
@@ -31,7 +30,7 @@
                                                                                  cellClass:cellClass
                                                                             cellIdentifier:cellIdentifier
                                                                           cellConfigurator:cellConfigurator];
-        } else if([parentView isKindOfClass:[UICollectionView class]]){
+        } else if ([parentView isKindOfClass:[UICollectionView class]]) {
             _collectionViewPopulator = [[OFACollectionViewSectionPopulator alloc] initWithParentView:(UICollectionView *)parentView
                                                                                          dataFetcher:dataFetcher
                                                                                            cellClass:cellClass
@@ -42,7 +41,6 @@
     return self;
 }
 
-
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
 {
     return [[self activeTaget] methodSignatureForSelector:selector];
@@ -50,16 +48,14 @@
 
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
-    if ([[self activeTaget] respondsToSelector: invocation.selector]) {
+    if ([[self activeTaget] respondsToSelector:invocation.selector]) {
         [invocation invokeWithTarget:[self activeTaget]];
     }
 }
 
-
--(id) activeTaget
+- (id)activeTaget
 {
-    return (_tableViewPopulator) ?:_collectionViewPopulator;
+    return (_tableViewPopulator) ? : _collectionViewPopulator;
 }
-
 
 @end

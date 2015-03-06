@@ -11,15 +11,13 @@
 
 @protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
-
 @end
-
 
 @interface OFASectionPopulator : NSProxy <OFASectionPopulator>
 
--(instancetype) initWithParentView:(UIView *)parentView
+- (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
-                          cellClass:(Class) cellClass
-                     cellIdentifier:(NSString* (^)(id obj, NSIndexPath *indexPath))cellIdentifier
-                   cellConfigurator:(void (^)(id obj, UIView *cell, NSIndexPath *indexPath))cellConfigurator;
+                         cellClass:(Class)cellClass
+                    cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
+                  cellConfigurator:(void (^)(id obj, UIView *cell, NSIndexPath *indexPath))cellConfigurator;
 @end
