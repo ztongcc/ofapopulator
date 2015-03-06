@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-#import "OFASectionedPopulator.h"
+#import "OFAViewPopulator.h"
 #import "OFASectionPopulator.h"
 
 #import "ExampleDataFetcher.h"
@@ -15,7 +15,7 @@
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) OFASectionedPopulator *populator;
+@property (nonatomic, strong) OFAViewPopulator *populator;
 
 @end
 
@@ -45,7 +45,7 @@
                                               }];
     
     
-    self.populator = [[OFASectionedPopulator alloc] initWithParentView:self.collectionView
+    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.collectionView
                                                      sectionPopulators:@[section1Populator, section2Populator]];
 }
 

@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface OFASectionedPopulator : NSObject <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface OFAViewPopulator : NSObject <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 -(instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators;
 @end

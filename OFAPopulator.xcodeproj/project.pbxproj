@@ -17,7 +17,7 @@
 		644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676DA1AA501DA005B456C /* OFASectionPopulator.m */; };
 		644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataFetcher.m */; };
 		644676E41AA508E1005B456C /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */; };
-		644676E71AA50E9D005B456C /* OFASectionedPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E61AA50E9D005B456C /* OFASectionedPopulator.m */; };
+		644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E61AA50E9D005B456C /* OFAViewPopulator.m */; };
 		64DD2B4B1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4A1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m */; };
 		64DD2B4E1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4D1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.m */; };
 		64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B501AA8FE8F00A1402D /* SecondViewController.m */; };
@@ -55,8 +55,8 @@
 		644676E01AA50609005B456C /* ExampleDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataFetcher.m; sourceTree = "<group>"; };
 		644676E21AA508E1005B456C /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
 		644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
-		644676E51AA50E9D005B456C /* OFASectionedPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionedPopulator.h; sourceTree = "<group>"; };
-		644676E61AA50E9D005B456C /* OFASectionedPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFASectionedPopulator.m; sourceTree = "<group>"; };
+		644676E51AA50E9D005B456C /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAViewPopulator.h; sourceTree = "<group>"; };
+		644676E61AA50E9D005B456C /* OFAViewPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAViewPopulator.m; sourceTree = "<group>"; };
 		64DD2B491AA8FB0600A1402D /* OFAAbstractSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAAbstractSectionPopulator.h; sourceTree = "<group>"; };
 		64DD2B4A1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAAbstractSectionPopulator.m; sourceTree = "<group>"; };
 		64DD2B4C1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
@@ -106,31 +106,8 @@
 		644676B21AA50163005B456C /* OFAPopulator */ = {
 			isa = PBXGroup;
 			children = (
-				644676B71AA50163005B456C /* AppDelegate.h */,
-				644676B81AA50163005B456C /* AppDelegate.m */,
-				644676BA1AA50163005B456C /* ViewController.h */,
-				644676BB1AA50163005B456C /* ViewController.m */,
-				644676DF1AA50609005B456C /* ExampleDataFetcher.h */,
-				644676E01AA50609005B456C /* ExampleDataFetcher.m */,
-				64DD2B4F1AA8FE8F00A1402D /* SecondViewController.h */,
-				64DD2B501AA8FE8F00A1402D /* SecondViewController.m */,
-				64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */,
-				64DD2B531AA904A100A1402D /* ExampleCollectionViewCell.m */,
-				644676BD1AA50163005B456C /* Main.storyboard */,
-				644676C01AA50163005B456C /* Images.xcassets */,
-				644676C21AA50163005B456C /* LaunchScreen.xib */,
-				644676B31AA50163005B456C /* Supporting Files */,
-				644676D91AA501DA005B456C /* OFASectionPopulator.h */,
-				644676DA1AA501DA005B456C /* OFASectionPopulator.m */,
-				644676DC1AA5027F005B456C /* OFADataFetcher.h */,
-				644676E21AA508E1005B456C /* OFATableViewSectionPopulator.h */,
-				644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */,
-				644676E51AA50E9D005B456C /* OFASectionedPopulator.h */,
-				644676E61AA50E9D005B456C /* OFASectionedPopulator.m */,
-				64DD2B491AA8FB0600A1402D /* OFAAbstractSectionPopulator.h */,
-				64DD2B4A1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m */,
-				64DD2B4C1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.h */,
-				64DD2B4D1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.m */,
+				6486FF331AA9EB580032D6F0 /* OFA */,
+				6486FF321AA9EB3A0032D6F0 /* ExampleApp */,
 			);
 			path = OFAPopulator;
 			sourceTree = "<group>";
@@ -159,6 +136,61 @@
 				644676CE1AA50163005B456C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6486FF321AA9EB3A0032D6F0 /* ExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				644676B31AA50163005B456C /* Supporting Files */,
+				644676B71AA50163005B456C /* AppDelegate.h */,
+				644676B81AA50163005B456C /* AppDelegate.m */,
+				644676BA1AA50163005B456C /* ViewController.h */,
+				644676BB1AA50163005B456C /* ViewController.m */,
+				644676DF1AA50609005B456C /* ExampleDataFetcher.h */,
+				644676E01AA50609005B456C /* ExampleDataFetcher.m */,
+				64DD2B4F1AA8FE8F00A1402D /* SecondViewController.h */,
+				64DD2B501AA8FE8F00A1402D /* SecondViewController.m */,
+				64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */,
+				64DD2B531AA904A100A1402D /* ExampleCollectionViewCell.m */,
+				644676BD1AA50163005B456C /* Main.storyboard */,
+				644676C01AA50163005B456C /* Images.xcassets */,
+				644676C21AA50163005B456C /* LaunchScreen.xib */,
+			);
+			name = ExampleApp;
+			sourceTree = "<group>";
+		};
+		6486FF331AA9EB580032D6F0 /* OFA */ = {
+			isa = PBXGroup;
+			children = (
+				6486FF351AA9EBEC0032D6F0 /* Public Interface */,
+				6486FF341AA9EB740032D6F0 /* SectionPopulators */,
+			);
+			name = OFA;
+			sourceTree = "<group>";
+		};
+		6486FF341AA9EB740032D6F0 /* SectionPopulators */ = {
+			isa = PBXGroup;
+			children = (
+				64DD2B491AA8FB0600A1402D /* OFAAbstractSectionPopulator.h */,
+				64DD2B4A1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m */,
+				644676E21AA508E1005B456C /* OFATableViewSectionPopulator.h */,
+				644676E31AA508E1005B456C /* OFATableViewSectionPopulator.m */,
+				64DD2B4C1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.h */,
+				64DD2B4D1AA8FBD700A1402D /* OFACollectionViewSectionPopulator.m */,
+			);
+			name = SectionPopulators;
+			sourceTree = "<group>";
+		};
+		6486FF351AA9EBEC0032D6F0 /* Public Interface */ = {
+			isa = PBXGroup;
+			children = (
+				644676D91AA501DA005B456C /* OFASectionPopulator.h */,
+				644676DA1AA501DA005B456C /* OFASectionPopulator.m */,
+				644676E51AA50E9D005B456C /* OFAViewPopulator.h */,
+				644676E61AA50E9D005B456C /* OFAViewPopulator.m */,
+				644676DC1AA5027F005B456C /* OFADataFetcher.h */,
+			);
+			name = "Public Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +297,7 @@
 				644676BC1AA50163005B456C /* ViewController.m in Sources */,
 				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
 				644676E41AA508E1005B456C /* OFATableViewSectionPopulator.m in Sources */,
-				644676E71AA50E9D005B456C /* OFASectionedPopulator.m in Sources */,
+				644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */,
 				644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */,
 				64DD2B4B1AA8FB0600A1402D /* OFAAbstractSectionPopulator.m in Sources */,
 				64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */,

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 com.vs. All rights reserved.
 //
 
-#import "OFASectionedPopulator.h"
+#import "OFAViewPopulator.h"
 #import "OFASectionPopulator.h"
 
-@interface OFASectionedPopulator ()
+@interface OFAViewPopulator ()
 @property (nonatomic, weak) UIView *parentView;
 @property (nonatomic, strong) NSArray *populators;
 @end
 
 
-@implementation OFASectionedPopulator
+@implementation OFAViewPopulator
 -(instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
 {
     self = [super init];

@@ -9,11 +9,11 @@
 #import "ViewController.h"
 #import "ExampleDataFetcher.h"
 #import "OFASectionPopulator.h"
-#import "OFASectionedPopulator.h"
+#import "OFAViewPopulator.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) OFASectionedPopulator *populator;
+@property (nonatomic, strong) OFAViewPopulator *populator;
 @end
 
 @implementation ViewController
@@ -44,7 +44,7 @@
     }];
 
     
-    self.populator = [[OFASectionedPopulator alloc] initWithParentView:self.tableView
+    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
                                                      sectionPopulators:@[section1Populator, section2Populator]];
 
 }
