@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ExampleDataFetcher.h"
-#import "OFASectionPopulator.h"
+#import "OFAMinMaxSelectionSectionPopulator.h"
 #import "OFAViewPopulator.h"
 
 @interface ViewController ()
@@ -22,11 +22,13 @@
 {
     [super viewDidLoad];
 
-    OFASectionPopulator *section1Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
-                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
-                                                                                   cellClass:[UITableViewCell class]
-                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return indexPath.row % 2 ? @"Section1_1" : @"Section1_2"; }
-                                                                            cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
+    OFASectionPopulator *section1Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
+                                                                                               minSelection:1
+                                                                                               maxSelection:2
+                                                                                                dataFetcher:[[ExampleDataFetcher alloc] init]
+                                                                                                  cellClass:[UITableViewCell class]
+                                                                                             cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
+                                                                                           cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
     {
         UITableViewCell *cell = (UITableViewCell *)view;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -36,12 +38,7 @@
 
     
     section1Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
-        UITableViewCell *tvc = (UITableViewCell *)cell;
-        if (tvc.isSelected) {
-            [tvc setAccessoryType:UITableViewCellAccessoryCheckmark];
-        } else {
-            [tvc setAccessoryType:UITableViewCellAccessoryNone];
-        }
+        NSLog(@"%@", obj);
     };
     
     

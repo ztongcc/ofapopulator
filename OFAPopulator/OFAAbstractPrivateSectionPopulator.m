@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 com.vs. All rights reserved.
 //
 
-#import "OFAAbstractSectionPopulator.h"
+#import "OFAAbstractPrivateSectionPopulator.h"
 
-@implementation OFAAbstractSectionPopulator
+@implementation OFAAbstractPrivateSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

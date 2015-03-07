@@ -9,35 +9,29 @@
 #import "OFAViewPopulator.h"
 #import "OFASectionPopulator.h"
 
-@interface OFAViewPopulator ()
-@property (nonatomic, weak) UIView    *parentView;
+
+
+#pragma mark -
+
+@interface OFATableViewPopulator : NSObject <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, weak) UITableView    *parentView;
 @property (nonatomic, strong) NSArray *populators;
 @end
 
-@implementation OFAViewPopulator
-- (instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
+@implementation OFATableViewPopulator
+- (instancetype)initWithParentView:(UITableView *)tv sectionPopulators:(NSArray *)populators
 {
     self = [super init];
     if (self) {
-        _parentView = parentView;
+        _parentView = tv;
         _populators = populators;
-
-        if ([_parentView isKindOfClass:[UITableView class]]) {
-            UITableView *tv = (UITableView *)_parentView;
-            tv.dataSource = self;
-            tv.delegate = self;
-            tv.allowsMultipleSelection = YES;
-        } else if ([_parentView isKindOfClass:[UICollectionView class]]) {
-            UICollectionView *cv = (UICollectionView *)_parentView;
-            cv.dataSource = self;
-            cv.delegate = self;
-            cv.allowsMultipleSelection = YES;
-        }
+        
+        tv.dataSource = self;
+        tv.delegate = self;
+        tv.allowsMultipleSelection = YES;
     }
     return self;
 }
-
-#pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return self.populators.count;
@@ -69,7 +63,32 @@
     [pop tableView:tableView didDeselectRowAtIndexPath:indexPath];
     
 }
-#pragma mark - collectionview
+
+@end
+
+#pragma mark -
+
+@interface OFACollectionViewPopulator : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic, weak) UICollectionView    *parentView;
+@property (nonatomic, strong) NSArray *populators;
+@end
+
+
+@implementation OFACollectionViewPopulator
+
+- (instancetype)initWithParentView:(UICollectionView *)tv sectionPopulators:(NSArray *)populators
+{
+    self = [super init];
+    if (self) {
+        _parentView = tv;
+        _populators = populators;
+        
+        tv.dataSource = self;
+        tv.delegate = self;
+        tv.allowsMultipleSelection = YES;
+    }
+    return self;
+}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -99,5 +118,44 @@
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop collectionView:collectionView didDeselectItemAtIndexPath:indexPath];
 }
+
+@end
+
+
+#pragma mark -
+
+@interface OFAViewPopulator ()
+
+@property (nonatomic, strong) id privatePopulator;
+@end
+
+@implementation OFAViewPopulator
+- (instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
+{
+    if (self) {
+        if ([parentView isKindOfClass:[UITableView class]]) {
+            self.privatePopulator = [[OFATableViewPopulator alloc] initWithParentView:(UITableView *)parentView
+                                                                    sectionPopulators:populators];
+        } else if ([parentView isKindOfClass:[UICollectionView class]]) {
+            self.privatePopulator = [[OFACollectionViewPopulator alloc] initWithParentView:(UICollectionView *)parentView
+                                                                         sectionPopulators:populators];
+        }
+    }
+    return self;
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
+{
+    return [[self privatePopulator] methodSignatureForSelector:selector];
+}
+
+- (void)forwardInvocation:(NSInvocation *)invocation
+{
+    if ([[self privatePopulator] respondsToSelector:invocation.selector]) {
+        [invocation invokeWithTarget:[self privatePopulator]];
+    }
+}
+
+
 
 @end

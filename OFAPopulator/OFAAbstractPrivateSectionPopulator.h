@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "OFASectionPopulator.h"
 
-@interface OFAAbstractSectionPopulator : NSObject <OFASectionPopulator>
+@interface OFAAbstractPrivateSectionPopulator : NSObject <OFASectionPopulator>
 @property (nonatomic, strong) id<OFADataFetcher> dataFetcher;
 @property (nonatomic, copy) NSString * (^cellIdentifier)(id obj, NSIndexPath *indexPath);
 @end
