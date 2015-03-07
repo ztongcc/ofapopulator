@@ -11,14 +11,6 @@
 
 
 
-@protocol OFASelectable <NSObject>
-
--(BOOL)isSelected;
--(void)setSelected:(BOOL)selected;
-
-@end
-
-
 @interface OFAMinMaxSelectionSectionPopulator ()
 @property (nonatomic, assign, readonly) NSUInteger min;
 @property (nonatomic, assign, readonly) NSUInteger max;
@@ -77,7 +69,6 @@
                 [self.selectedObjectIndiciesQueue addObject:index];
             }
             
-        
             NSMutableArray *selectedObjects = [@[] mutableCopy];
             [self.selectedObjectIndiciesQueue enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
                 [selectedObjects addObject:[self.dataFetcher sectionObjects][[number integerValue]] ];
@@ -91,12 +82,12 @@
             
             if ([self.parentView isKindOfClass:[UITableView class]]) {
                 [self toogleSelectionForIndicies:selectedIndicies
-                                     ontableView:(UITableView *)(self.parentView)
+                                     onTableView:(UITableView *)(self.parentView)
                                      baseSection:ip.section
                                         selected:YES];
                 
                 [self toogleSelectionForIndicies:deselectedIndicies
-                                     ontableView:(UITableView *)(self.parentView)
+                                     onTableView:(UITableView *)(self.parentView)
                                      baseSection:ip.section
                                         selected:NO];
             }
@@ -107,16 +98,17 @@
 }
 
 -(void) toogleSelectionForIndicies:(NSSet *)indicies
-                       ontableView:(UITableView *)tableView
+                       onTableView:(UITableView *)tableView
                        baseSection:(NSUInteger)section
                           selected:(BOOL)selected
 {
     [indicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *selectIndex, NSUInteger idx, BOOL *stop) {
         NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:[selectIndex integerValue] inSection:section];
-            UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectIndexPath];
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectIndexPath];
+        if (cell.isSelected != selected) {
             [cell setSelected:selected];
+        }
     }];
-
 }
 
 

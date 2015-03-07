@@ -69,6 +69,7 @@
 		6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAMinMaxSelectionSectionPopulator.m; sourceTree = "<group>"; };
 		6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
 		6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
+		64D2BB6F1AAB32A200FFD537 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASelectableCell.h; sourceTree = "<group>"; };
 		64DD2B491AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
 		64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
 		64DD2B4C1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAPrivateCollectionViewSectionPopulator.h; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 				644676DC1AA5027F005B456C /* OFADataFetcher.h */,
 				6486FF3C1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.h */,
 				6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */,
+				64D2BB6F1AAB32A200FFD537 /* OFASelectableCell.h */,
 			);
 			name = "Public Interface";
 			sourceTree = "<group>";

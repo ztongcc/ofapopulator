@@ -8,15 +8,20 @@
 
 #import "ExampleTableViewCell.h"
 
+@interface ExampleTableViewCell ()
+@property (nonatomic, getter=isSelected) BOOL selected;
+@end
+
+
 @implementation ExampleTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     self.accessoryType = selected ? UITableViewCellAccessoryCheckmark: UITableViewCellAccessoryNone;
 }
+
 
 @end

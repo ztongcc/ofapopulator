@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OFASelectableCell.h"
 
-@interface ExampleTableViewCell : UITableViewCell
+@interface ExampleTableViewCell : UITableViewCell <OFASelectableCell>
 
 @end
