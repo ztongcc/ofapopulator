@@ -10,10 +10,20 @@
 #import "OFADataFetcher.h"
 
 
+
+@protocol OFASelectable <NSObject>
+
+-(BOOL)isSelected;
+-(void)setSelected:(BOOL)selected;
+
+@end
+
+
 @interface OFAMinMaxSelectionSectionPopulator ()
 @property (nonatomic, assign, readonly) NSUInteger min;
 @property (nonatomic, assign, readonly) NSUInteger max;
 @property (nonatomic, strong) NSMutableArray *selectedObjectIndiciesQueue;
+@property (nonatomic, strong) NSArray *previouslySelectedIndiciesQueue;
 @property (nonatomic, copy) void (^ originalSelector)(id, UIView *, NSIndexPath *);
 
 @property (nonatomic, weak) id<OFADataFetcher> dataFetcher;
@@ -58,24 +68,13 @@
             NSNumber *index = @(ip.row);
             if ([self.selectedObjectIndiciesQueue containsObject:index]) {
                 if([self.selectedObjectIndiciesQueue count] > self.min){
-                    [self.selectedObjectIndiciesQueue removeObject:index];
-                    [(UITableViewCell *)v setAccessoryType:UITableViewCellAccessoryNone];
-                }
+                    [self.selectedObjectIndiciesQueue removeObject:index];                }
             } else {
                 if ([self.selectedObjectIndiciesQueue count] >= self.max) {
-                    
-                    NSNumber *objectToRemoveindex = [self.selectedObjectIndiciesQueue objectAtIndex:0];
-                    NSIndexPath *ipViewToDeselect = [NSIndexPath indexPathForRow:[objectToRemoveindex integerValue] inSection:ip.section];
-                    [[(UITableView *)self.parentView cellForRowAtIndexPath:ipViewToDeselect] setAccessoryType:UITableViewCellAccessoryNone];
-                    
                     [self.selectedObjectIndiciesQueue removeObjectAtIndex:0];
                 }
                 [self.selectedObjectIndiciesQueue addObject:index];
-                
-                NSIndexPath *ipViewToSelect = [NSIndexPath indexPathForRow:[index integerValue] inSection:ip.section];
-                [[(UITableView *)self.parentView cellForRowAtIndexPath:ipViewToSelect] setAccessoryType:UITableViewCellAccessoryCheckmark];
-
-            }
+                            }
             
         
             NSMutableArray *selectedObjects = [@[] mutableCopy];
@@ -83,7 +82,35 @@
                 [selectedObjects addObject:[self.dataFetcher sectionObjects][[number integerValue]] ];
             }];
             
+            NSMutableSet *deselectedIndicies = [NSMutableSet setWithArray:self.previouslySelectedIndiciesQueue];
+            [deselectedIndicies minusSet:[NSSet setWithArray:self.selectedObjectIndiciesQueue]];
+            
+            NSMutableSet *selectedIndicies = [NSMutableSet setWithArray:self.previouslySelectedIndiciesQueue];
+            [selectedIndicies intersectSet:[NSSet setWithArray:self.selectedObjectIndiciesQueue]];
+            
+            [deselectedIndicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *deselectIndex, NSUInteger idx, BOOL *stop) {
+                NSIndexPath *deselectIndexPath = [NSIndexPath indexPathForRow:[deselectIndex integerValue] inSection:ip.section];
+                if ([self.parentView isKindOfClass:[UITableView class]]) {
+                    UITableView *tv = (UITableView *)self.parentView;
+                    UITableViewCell *cell = [tv cellForRowAtIndexPath:deselectIndexPath];
+                    [cell setSelected:NO];
+                }
+            }];
+            
+            
+            
+            [selectedIndicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *selectIndex, NSUInteger idx, BOOL *stop) {
+                NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:[selectIndex integerValue] inSection:ip.section];
+                if ([self.parentView isKindOfClass:[UITableView class]]) {
+                    UITableView *tv = (UITableView *)self.parentView;
+                    UITableViewCell *cell = [tv cellForRowAtIndexPath:selectIndexPath];
+                    [cell setSelected:YES];
+                }
+            }];
+            
             self.originalSelector ([selectedObjects copy], v, ip);
+            
+            self.previouslySelectedIndiciesQueue = [self.selectedObjectIndiciesQueue copy];
         }
 
     }];

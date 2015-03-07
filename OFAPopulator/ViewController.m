@@ -11,6 +11,8 @@
 #import "OFAMinMaxSelectionSectionPopulator.h"
 #import "OFAViewPopulator.h"
 
+#import "ExampleTableViewCell.h"
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) OFAViewPopulator   *populator;
@@ -26,7 +28,7 @@
                                                                                                minSelection:1
                                                                                                maxSelection:2
                                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
-                                                                                                  cellClass:[UITableViewCell class]
+                                                                                                  cellClass:[ExampleTableViewCell class]
                                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
                                                                                            cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
     {

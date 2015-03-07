@@ -21,6 +21,7 @@
 		6486FF381AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */; };
 		6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */; };
 		6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */; };
+		6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */; };
 		64DD2B4B1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */; };
 		64DD2B4E1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4D1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m */; };
 		64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B501AA8FE8F00A1402D /* SecondViewController.m */; };
@@ -66,6 +67,8 @@
 		6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
 		6486FF3C1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAMinMaxSelectionSectionPopulator.h; sourceTree = "<group>"; };
 		6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAMinMaxSelectionSectionPopulator.m; sourceTree = "<group>"; };
+		6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
+		6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
 		64DD2B491AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
 		64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
 		64DD2B4C1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAPrivateCollectionViewSectionPopulator.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				644676BD1AA50163005B456C /* Main.storyboard */,
 				644676C01AA50163005B456C /* Images.xcassets */,
 				644676C21AA50163005B456C /* LaunchScreen.xib */,
+				6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */,
+				6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */,
 			);
 			name = ExampleApp;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
 				644676E41AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m in Sources */,
 				644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */,
+				6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */,
 				6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */,
 				6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */,
 				644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */,
