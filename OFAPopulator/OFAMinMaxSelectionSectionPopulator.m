@@ -68,13 +68,14 @@
             NSNumber *index = @(ip.row);
             if ([self.selectedObjectIndiciesQueue containsObject:index]) {
                 if([self.selectedObjectIndiciesQueue count] > self.min){
-                    [self.selectedObjectIndiciesQueue removeObject:index];                }
+                    [self.selectedObjectIndiciesQueue removeObject:index];
+                }
             } else {
                 if ([self.selectedObjectIndiciesQueue count] >= self.max) {
                     [self.selectedObjectIndiciesQueue removeObjectAtIndex:0];
                 }
                 [self.selectedObjectIndiciesQueue addObject:index];
-                            }
+            }
             
         
             NSMutableArray *selectedObjects = [@[] mutableCopy];
@@ -88,32 +89,34 @@
             NSMutableSet *selectedIndicies = [NSMutableSet setWithArray:self.previouslySelectedIndiciesQueue];
             [selectedIndicies intersectSet:[NSSet setWithArray:self.selectedObjectIndiciesQueue]];
             
-            [deselectedIndicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *deselectIndex, NSUInteger idx, BOOL *stop) {
-                NSIndexPath *deselectIndexPath = [NSIndexPath indexPathForRow:[deselectIndex integerValue] inSection:ip.section];
-                if ([self.parentView isKindOfClass:[UITableView class]]) {
-                    UITableView *tv = (UITableView *)self.parentView;
-                    UITableViewCell *cell = [tv cellForRowAtIndexPath:deselectIndexPath];
-                    [cell setSelected:NO];
-                }
-            }];
-            
-            
-            
-            [selectedIndicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *selectIndex, NSUInteger idx, BOOL *stop) {
-                NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:[selectIndex integerValue] inSection:ip.section];
-                if ([self.parentView isKindOfClass:[UITableView class]]) {
-                    UITableView *tv = (UITableView *)self.parentView;
-                    UITableViewCell *cell = [tv cellForRowAtIndexPath:selectIndexPath];
-                    [cell setSelected:YES];
-                }
-            }];
-            
+            if ([self.parentView isKindOfClass:[UITableView class]]) {
+                [self toogleSelectionForIndicies:selectedIndicies
+                                     ontableView:(UITableView *)(self.parentView)
+                                     baseSection:ip.section
+                                        selected:YES];
+                
+                [self toogleSelectionForIndicies:deselectedIndicies
+                                     ontableView:(UITableView *)(self.parentView)
+                                     baseSection:ip.section
+                                        selected:NO];
+            }
             self.originalSelector ([selectedObjects copy], v, ip);
-            
             self.previouslySelectedIndiciesQueue = [self.selectedObjectIndiciesQueue copy];
         }
-
     }];
+}
+
+-(void) toogleSelectionForIndicies:(NSSet *)indicies
+                       ontableView:(UITableView *)tableView
+                       baseSection:(NSUInteger)section
+                          selected:(BOOL)selected
+{
+    [indicies.allObjects enumerateObjectsUsingBlock:^(NSNumber *selectIndex, NSUInteger idx, BOOL *stop) {
+        NSIndexPath *selectIndexPath = [NSIndexPath indexPathForRow:[selectIndex integerValue] inSection:section];
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:selectIndexPath];
+            [cell setSelected:selected];
+    }];
+
 }
 
 
