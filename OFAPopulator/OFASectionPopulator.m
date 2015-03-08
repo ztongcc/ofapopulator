@@ -64,4 +64,9 @@
 {
     [[self activeTaget] setObjectOnCellSelected:objectOnCellSelected];
 }
+
+-(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
+{
+    [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
+}
 @end

@@ -10,6 +10,8 @@
 
 @implementation OFAPrivateTableViewSectionPopulator
 
+@synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
+
 - (instancetype)initWithParentView:(UITableView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
                          cellClass:(Class)cellClass
@@ -71,5 +73,20 @@
                                   indexPath
                                   );
     };
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.heightForCellAtIndexPath) {
+        return self.heightForCellAtIndexPath([self.dataFetcher sectionObjects][indexPath.row],indexPath);
+
+    }
+    return tableView.rowHeight;
+}
+
+
+-(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
+{
+    _heightForCellAtIndexPath = heightForCellAtIndexPath;
 }
 @end

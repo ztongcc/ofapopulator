@@ -12,6 +12,8 @@
 	<dict>
 		<key>4DD15F4DE51640A2DB74200CFB0D21CC41ACF8C2</key>
 		<string>https://github.com/vikingosegundo/OFAPopulator.git</string>
+		<key>4FF8CB72FEE4450A37215FC1DECE8C03C3468912</key>
+		<string>github.com:devedup/FlickrKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>OFAPopulator.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>4DD15F4DE51640A2DB74200CFB0D21CC41ACF8C2</key>
 		<string>../..</string>
+		<key>4FF8CB72FEE4450A37215FC1DECE8C03C3468912</key>
+		<string>../../../../Downloads/FlickrKit</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vikingosegundo/OFAPopulator.git</string>
@@ -28,6 +32,14 @@
 	<string>4DD15F4DE51640A2DB74200CFB0D21CC41ACF8C2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4FF8CB72FEE4450A37215FC1DECE8C03C3468912</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FlickrKit</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

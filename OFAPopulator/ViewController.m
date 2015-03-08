@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "ExampleDataFetcher.h"
+#import "FlickerPhotoFetcher.h"
+
 #import "OFAMinMaxSelectionSectionPopulator.h"
 #import "OFAViewPopulator.h"
 
@@ -53,8 +55,34 @@
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
 
+    
+    OFASectionPopulator *section3Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
+                                                                                               minSelection:1 maxSelection:4
+                                                                                                dataFetcher:[[FlickerPhotoFetcher alloc] init]
+                                                                                                  cellClass:[UITableViewCell class]
+                                                                                             cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section3"; }
+                                                                                           cellConfigurator:^(UIImage *image, UITableViewCell *cell, NSIndexPath *indexPath)
+    {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+        cell.backgroundView  = ({
+            UIImageView *iv = [[UIImageView alloc] initWithFrame:cell.bounds];
+            iv.image =image;
+            iv.contentMode = UIViewContentModeScaleAspectFill;
+            iv.center = cell.center;
+            iv;
+        });
+        cell.clipsToBounds = YES;
+    }];
+    
+    section3Populator.heightForCellAtIndexPath =^(UIImage *obj, NSIndexPath *ip){
+        CGFloat factor = obj.size.width / self.view.frame.size.width;
+        return obj.size.height / factor;
+    };
+
+    
     self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
-                                                sectionPopulators:@[section1Populator, section2Populator]];
+                                                sectionPopulators:@[section1Populator, section2Populator,section3Populator]];
 }
 
 @end

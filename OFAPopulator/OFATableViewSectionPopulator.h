@@ -8,6 +8,7 @@
 
 #import "OFAPrivateTableViewSectionPopulator.h"
 
+
 @interface OFATableViewSectionPopulator : OFAPrivateTableViewSectionPopulator
 
 @end

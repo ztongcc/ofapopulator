@@ -98,6 +98,16 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    if ([pop respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+        return [pop tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    return tableView.rowHeight;
+}
+
+
 @end
 
 #pragma mark -

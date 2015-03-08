@@ -9,8 +9,10 @@
 #import "OFAAbstractPrivateSectionPopulator.h"
 
 @interface OFAPrivateTableViewSectionPopulator : OFAAbstractPrivateSectionPopulator
+
 @property(nonatomic, weak) UITableView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UITableViewCell *, NSIndexPath *);
+@property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 
 - (instancetype)initWithParentView:(UITableView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
