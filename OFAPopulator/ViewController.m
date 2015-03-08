@@ -79,6 +79,10 @@
         CGFloat factor = obj.size.width / self.view.frame.size.width;
         return obj.size.height / factor;
     };
+    
+    section3Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
+        NSLog(@"%@", obj);
+    };
 
     
     self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView

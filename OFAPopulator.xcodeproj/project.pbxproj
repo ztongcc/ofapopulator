@@ -27,6 +27,8 @@
 		64C122231AACD8400071A63F /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C1221E1AACD8280071A63F /* libFlickrKit.a */; };
 		64C122251AACD8B70071A63F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122241AACD8B70071A63F /* SystemConfiguration.framework */; };
 		64C122271AACD91C0071A63F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122261AACD91C0071A63F /* AssetsLibrary.framework */; };
+		64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */; };
+		64C122301AAD066B0071A63F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1222F1AAD066B0071A63F /* ThirdViewController.m */; };
 		64DD2B4B1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */; };
 		64DD2B4E1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4D1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m */; };
 		64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B501AA8FE8F00A1402D /* SecondViewController.m */; };
@@ -102,6 +104,10 @@
 		64C122181AACD8280071A63F /* FlickrKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlickrKit.xcodeproj; path = ../../Downloads/FlickrKit/FlickrKit.xcodeproj; sourceTree = "<group>"; };
 		64C122241AACD8B70071A63F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		64C122261AACD91C0071A63F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		64C1222A1AAD033D0071A63F /* ExampleImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleImageCollectionViewCell.h; sourceTree = "<group>"; };
+		64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleImageCollectionViewCell.m; sourceTree = "<group>"; };
+		64C1222E1AAD066B0071A63F /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		64C1222F1AAD066B0071A63F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		64D2BB6F1AAB32A200FFD537 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASelectableCell.h; sourceTree = "<group>"; };
 		64DD2B491AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
 		64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
@@ -213,6 +219,10 @@
 				644676C21AA50163005B456C /* LaunchScreen.xib */,
 				6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */,
 				6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */,
+				64C1222A1AAD033D0071A63F /* ExampleImageCollectionViewCell.h */,
+				64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */,
+				64C1222E1AAD066B0071A63F /* ThirdViewController.h */,
+				64C1222F1AAD066B0071A63F /* ThirdViewController.m */,
 			);
 			name = ExampleApp;
 			sourceTree = "<group>";
@@ -394,6 +404,7 @@
 			files = (
 				64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */,
 				644676BC1AA50163005B456C /* ViewController.m in Sources */,
+				64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */,
 				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
 				644676E41AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m in Sources */,
 				644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */,
@@ -401,6 +412,7 @@
 				6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */,
 				6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */,
 				644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */,
+				64C122301AAD066B0071A63F /* ThirdViewController.m in Sources */,
 				64DD2B4B1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m in Sources */,
 				64C121F51AACD5A20071A63F /* FlickerPhotoFetcher.m in Sources */,
 				64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */,

@@ -22,7 +22,7 @@
 		<key>4DD15F4DE51640A2DB74200CFB0D21CC41ACF8C2</key>
 		<string>../..</string>
 		<key>4FF8CB72FEE4450A37215FC1DECE8C03C3468912</key>
-		<string>../../../../Downloads/FlickrKit</string>
+		<string>../../../Downloads/FlickrKit</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/vikingosegundo/OFAPopulator.git</string>
