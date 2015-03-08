@@ -22,7 +22,7 @@
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
                          cellClass:(Class)cellClass
                     cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
-                  cellConfigurator:(void (^)(id, UIView *, NSIndexPath *))cellConfigurator
+                  cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator
 {
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {

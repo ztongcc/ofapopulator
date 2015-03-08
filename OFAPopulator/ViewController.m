@@ -30,9 +30,8 @@
                                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                                   cellClass:[ExampleTableViewCell class]
                                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
-                                                                                           cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
+                                                                                           cellConfigurator:^(id obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
-        UITableViewCell *cell = (UITableViewCell *)view;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
         cell.textLabel.backgroundColor = [UIColor clearColor];
@@ -48,9 +47,8 @@
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UITableViewCell class]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
-                                                                            cellConfigurator:^(NSNumber *obj, UIView *view, NSIndexPath *indexPath)
+                                                                            cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
-        UITableViewCell *cell = (UITableViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];

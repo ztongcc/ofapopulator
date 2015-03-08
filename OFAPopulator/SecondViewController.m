@@ -29,9 +29,8 @@
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[ExampleCollectionViewCell class]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return indexPath.row % 2 ? @"cell" : @"cell2"; }
-                                                                            cellConfigurator:^(id obj, UIView *view, NSIndexPath *indexPath)
+                                                                            cellConfigurator:^(id obj, ExampleCollectionViewCell *cell, NSIndexPath *indexPath)
     {
-        ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
     }];
 
@@ -45,9 +44,8 @@
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                    cellClass:[UICollectionViewCell class]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"cell2"; }
-                                                                            cellConfigurator:^(NSNumber *obj, UIView *view, NSIndexPath *indexPath)
+                                                                            cellConfigurator:^(NSNumber *obj, ExampleCollectionViewCell *cell, NSIndexPath *indexPath)
     {
-        ExampleCollectionViewCell *cell = (ExampleCollectionViewCell *)view;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
     }];
     

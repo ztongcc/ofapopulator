@@ -15,5 +15,5 @@
                       dataFetcher:(id<OFADataFetcher>)dataFetcher
                         cellClass:(Class)cellClass
                    cellIdentifier:(NSString *(^)(id, NSIndexPath *))cellIdentifier
-                 cellConfigurator:(void (^)(id, UIView *, NSIndexPath *))cellConfigurator;
+                 cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator;
 @end
