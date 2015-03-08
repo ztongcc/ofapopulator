@@ -26,7 +26,7 @@
 
     OFASectionPopulator *section1Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
                                                                                                minSelection:1
-                                                                                               maxSelection:2
+                                                                                               maxSelection:4
                                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
                                                                                                   cellClass:[ExampleTableViewCell class]
                                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}

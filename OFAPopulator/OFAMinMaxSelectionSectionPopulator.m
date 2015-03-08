@@ -112,4 +112,14 @@
 }
 
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *index = @(indexPath.row);
+    if ([self.selectedObjectIndiciesQueue containsObject:index]) {
+        cell.selected = YES;
+    } else {
+        cell.selected = NO;
+    }
+}
+
 @end

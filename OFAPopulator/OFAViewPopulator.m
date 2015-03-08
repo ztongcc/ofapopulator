@@ -16,6 +16,7 @@
 @interface OFATableViewPopulator : NSObject <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) UITableView    *parentView;
 @property (nonatomic, strong) NSArray *populators;
+@property (nonatomic, assign) NSUInteger currentSection;
 @end
 
 @implementation OFATableViewPopulator
@@ -39,12 +40,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    self.currentSection = section;
+
     id<OFASectionPopulator> pop = self.populators[section];
     return [pop tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{    self.currentSection = indexPath.section;
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     return [pop tableView:tableView cellForRowAtIndexPath:indexPath];
 }
@@ -52,6 +55,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.currentSection = indexPath.section;
+
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     [pop tableView:tableView didSelectRowAtIndexPath:indexPath];
     
@@ -59,10 +64,39 @@
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     self.currentSection = indexPath.section;
+
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
     [pop tableView:tableView didDeselectRowAtIndexPath:indexPath];
     
 }
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    [pop tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    id<OFASectionPopulator> pop = self.populators[section];
+    
+    if ([pop respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+        return [pop tableView:tableView heightForHeaderInSection:section];
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    id<OFASectionPopulator> pop = self.populators[section];
+    
+    if ([pop respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+        return [pop tableView:tableView viewForHeaderInSection:section];
+    }
+    return nil;
+}
+
 
 @end
 

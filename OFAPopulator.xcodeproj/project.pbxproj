@@ -18,6 +18,7 @@
 		644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataFetcher.m */; };
 		644676E41AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E31AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m */; };
 		644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E61AA50E9D005B456C /* OFAViewPopulator.m */; };
+		645566441AACB7A900E463E2 /* flickerCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 645566431AACB7A900E463E2 /* flickerCredentials.m */; };
 		6486FF381AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */; };
 		6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */; };
 		6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */; };
@@ -61,6 +62,8 @@
 		644676E31AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAPrivateTableViewSectionPopulator.m; sourceTree = "<group>"; };
 		644676E51AA50E9D005B456C /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAViewPopulator.h; sourceTree = "<group>"; };
 		644676E61AA50E9D005B456C /* OFAViewPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAViewPopulator.m; sourceTree = "<group>"; };
+		645566421AACB7A900E463E2 /* flickerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickerCredentials.h; sourceTree = "<group>"; };
+		645566431AACB7A900E463E2 /* flickerCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = flickerCredentials.m; path = ../../flickerCredentials.m; sourceTree = "<group>"; };
 		6486FF361AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
 		6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFACollectionViewSectionPopulator.m; sourceTree = "<group>"; };
 		6486FF391AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 		6486FF321AA9EB3A0032D6F0 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				645566421AACB7A900E463E2 /* flickerCredentials.h */,
+				645566431AACB7A900E463E2 /* flickerCredentials.m */,
 				644676B31AA50163005B456C /* Supporting Files */,
 				644676B71AA50163005B456C /* AppDelegate.h */,
 				644676B81AA50163005B456C /* AppDelegate.m */,
@@ -328,6 +333,7 @@
 				64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */,
 				644676B91AA50163005B456C /* AppDelegate.m in Sources */,
 				64DD2B4E1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m in Sources */,
+				645566441AACB7A900E463E2 /* flickerCredentials.m in Sources */,
 				6486FF381AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m in Sources */,
 				644676B61AA50163005B456C /* main.m in Sources */,
 			);

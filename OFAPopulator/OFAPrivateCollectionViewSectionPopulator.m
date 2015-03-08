@@ -20,6 +20,14 @@
     if (self = [super init]) {
         _parentView         = parentView;
         self.dataFetcher    = dataFetcher;
+        
+        __weak typeof(self) weakSelf = self;
+        [dataFetcher fetchSuccess:^{
+            typeof(weakSelf) self = weakSelf;
+            if (self) {
+                [self.parentView reloadData];
+            }
+        }];
         _cellConfigurator   = cellConfigurator;
         self.cellIdentifier = cellIdentifier;
     }

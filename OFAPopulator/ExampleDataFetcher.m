@@ -8,10 +8,40 @@
 
 #import "ExampleDataFetcher.h"
 
+
+@interface ExampleDataFetcher ()
+@property (nonatomic, copy) void(^success)(void);
+@end
+
+
 @implementation ExampleDataFetcher
-- (NSArray *)sectionObjects
+
+@synthesize sectionObjects = _sectionObjects;
+
+-(void)fetchedData:(id)obj onDataFetcher:(id<OFADataFetcher>)dataFetcher
 {
-    return @[@1, @1, @2, @3, @5, @8, @13, @21, @34, @55, @89, @144];
+    self.sectionObjects = obj;
+    self.success();
+}
+
+
+-(void)fetchingDataFaildWithError:(NSError *)error onDataFetcher:(id<OFADataFetcher>)dataFetcher
+{
+
+}
+
+-(void)fetchSuccess:(void (^)(void))success
+{
+    self.success = success;
+    
+    NSMutableArray *results = [@[@1, @1] mutableCopy];
+    for (NSUInteger i = 0; i< 20; ++i){
+        NSNumber *nMinus1 = results[[results count] - 2];
+        NSNumber *nMinus0 = results[[results count] - 1];
+        [results addObject:@([nMinus1 integerValue] + [nMinus0 integerValue])];
+    }
+    [self fetchedData:[results copy]
+        onDataFetcher:self];
 }
 
 @end
