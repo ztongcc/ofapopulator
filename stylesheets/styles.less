@@ -19,7 +19,7 @@ nav, footer, header, section, summary, mark, audio, video {
 }
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cit, code,
-del, dfn, em, ins, q, samp, small, strong, sub, sup, b, i, hr, dl, dt, dd,
+del, dfn, em, ins, q, samp, small, strong, b, i, hr, dl, dt, dd,
 ol, ul, li, fieldset, legend, label {
   border: 0;
   font-size: 100%;
@@ -88,16 +88,28 @@ h1,h2, h3, h4 {
 #content {
   margin: 40px auto 0 auto;
   max-width:1200px;
-  p, h1, h2, h3, h4 {
+  p, h1, h2, h3, h4, ul {
     font-weight: 200;
   }
-  p {
+  p, ul {
     font-size: 18px;
   }
 
   h2 {
     margin:36px auto 18px;
-
     font-size:24px;
+  }
+
+  ul {
+    padding-left: 1.5em;
+    list-style-type:square;
+  }
+
+  blockquote {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
   }
 }

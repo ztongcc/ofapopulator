@@ -1,5 +1,5 @@
 
-markdown: rdiscount
+markdown: kramdown
 permalink: pretty
 highlighter: pygments
 

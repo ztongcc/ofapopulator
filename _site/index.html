@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>OFA Polulator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
 
@@ -23,10 +23,65 @@
 <section id="content">
         <p>OFA Populator offers an easy to implement yet powerful and non-limiting way to populate table and collection views with one goal in mind: Keep view controllers clean and MVC smart.</p>
 
-<h2>What is wrong with the standard Datasource/Delegate approach?</h2>
+<h2 id="what-is-wrong-with-the-standard-datasourcedelegate-approach">What is wrong with the standard Datasource/Delegate approach?</h2>
 
-<p>Nothing is wrong with delegates and datasources, it is one of the most useful patterns in application programming.<br/>
-But nearly all codes you find only to demonstrate how to implement them are inherently broken. Yes, even those provided by apple.</p>
+<p>Nothing is wrong with delegates and datasources, it is one of the most useful patterns in application programming.<br />
+But nearly all codes you find only to demonstrate how to implement them are inherently broken. Yes, even those provided by Apple.</p>
+
+<p>In nearly every code you will find view controllers implementing just — anything.</p>
+
+<p>They deal with</p>
+
+<ul>
+  <li>Core Data</li>
+  <li>network handling</li>
+  <li>creating complex view hierarchies</li>
+  <li>calculations of any kind</li>
+  <li>…</li>
+</ul>
+
+<h2 id="but-what-is-wrong-with-view-controllers-implementing-these-kind-of-stuff">But what is wrong with View Controllers implementing these kind of stuff?</h2>
+
+<p>In Computer Science we know some principles that regardless of your coding paradigm and philosophies should be valued.<br />
+one the most importend is the «Single Responsible Principle», aka «SRP» and means that there should be only one task a code entity fulfills.</p>
+
+<blockquote>
+  <p>«A functional unit on a given level of abstraction should only be responsible for a single aspect of a system’s requirements. An aspect of requirements is a trait or property of requirements, which can change independently of other aspects.» – Ralf Westphal<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+</blockquote>
+
+<p>Sometimes it is hard to break down an idea into atomic entities or aspects.<br />
+But actually the original definition is very helpful in OOD:</p>
+
+<blockquote>
+  <p>«There should never be more than one reason for a class to change.» – Robert C. Martin<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+</blockquote>
+
+<p>So</p>
+
+<ul>
+  <li>if our Core Data model changes, our view model shouldn’t  </li>
+  <li>If we switch from one Network framework to another: our view controller shouldn’t be aware of it  </li>
+  <li>views should create its subviews.</li>
+  <li>Should a view controller render images? Seriously — no …</li>
+</ul>
+
+<p>But if we don’t wrap datasource &amp; delegate in objects but implement them in the view controllers, it is just too easy to break SRP.</p>
+
+<h2 id="but-how-to-fix-that">But how to fix that?</h2>
+
+<p>There is a wide variations of patters that might come in handy.<br />
+In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it easily adaptable for future developments (such as cubic collection views once Apple shows Google how to build data glasses).</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Ralf Westphal: <a href="http://www.developerfusion.com/article/137636/taking-the-single-responsibility-principle-seriously/">Taking the Single Responsibility Principle Seriously</a>. In: developerFusion. 2012-02-06 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Robert C. Martin: <a href="http://www.objectmentor.com/resources/articles/srp.pdf">SRP: The Single Responsibility Principle</a>(PDF). 1997 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 </section>
 </section>
