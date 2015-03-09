@@ -1,0 +1,6 @@
+
+markdown: rdiscount
+permalink: pretty
+highlighter: pygments
+
+gems: ['jekyll-less']
