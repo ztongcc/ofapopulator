@@ -70,7 +70,9 @@ But actually the original definition is very helpful in OOD:</p>
 <h2 id="but-how-to-fix-that">But how to fix that?</h2>
 
 <p>There is a wide variations of patters that might come in handy.<br />
-In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it easily adaptable for future developments (such as cubic collection views once Apple shows Google how to build data glasses).</p>
+In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it easily adaptable for future developments (such as cubic collection views once Apple shows Google how to build data glasses).<br />
+Also we use the Façade to break up the data source und delegate handling on Section level, making it easy to populate the sections of a table or collection view with different data and cells.<br />
+These section populators use data fetcher objects that will provide them with objects they fetch. Let it be from network, file system or some heavy computation. A data fetcher can be any object that conforms a certain protocol. There-for it is easy to adapt and integrate it in any project.</p>
 
 <div class="footnotes">
   <ol>
