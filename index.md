@@ -54,4 +54,4 @@ In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it ea
 
 [^1]: Ralf Westphal: [Taking the Single Responsibility Principle Seriously](http://www.developerfusion.com/article/137636/taking-the-single-responsibility-principle-seriously/). In: developerFusion. 2012-02-06
 
-[^2]: Robert C. Martin: [SRP: The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf)(PDF). 1997
+[^2]: Robert C. Martin: [SRP: The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf) (PDF). 1997
