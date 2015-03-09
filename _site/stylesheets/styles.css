@@ -112,87 +112,104 @@ a img {
 :focus {
   outline: 0;
 }
-h1,
-h2,
-h3,
-h4 {
+body h1,
+body h2,
+body h3,
+body h4 {
   text-align: center;
   font-weight: 200;
 }
-ul,
-ol {
+body ul,
+body ol {
   padding-left: 1.5em;
 }
-#header {
+body #header {
   padding: 40px 0 0;
   position: relative;
   overflow: hidden;
   background: #222;
 }
-#header h1,
-#header h2 {
+body #header h1,
+body #header h2 {
   color: white;
 }
-#header h1 {
+body #header h1 {
   font-size: 48px;
   line-height: 60px;
 }
-#header h2 {
+body #header h2 {
   font-size: 16px;
   line-height: 22px;
 }
-#header .screenshot {
+body #header .screenshot {
   display: block;
   margin: 40px auto 0 auto;
   padding: 0;
 }
-#header .shadow-overlay {
+body #header .shadow-overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 9px;
   background: url("../images/shadow.png") repeat-x;
 }
-#content {
+body #content {
   margin: 40px auto 0 auto;
   max-width: 1200px;
 }
-#content p,
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content ul {
+body #content p,
+body #content h1,
+body #content h2,
+body #content h3,
+body #content h4,
+body #content ul {
   font-weight: 200;
 }
-#content p,
-#content ul {
+body #content p,
+body #content ul {
   font-size: 18px;
 }
-#content h2 {
+body #content h2 {
   margin: 36px auto 18px;
   font-size: 24px;
 }
-#content ul {
+body #content ul {
   list-style-type: square;
 }
-#content blockquote {
+body #content blockquote {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 50px;
   padding-left: 15px;
   border-left: 3px solid #ccc;
 }
-#content .footnotes {
+body #content .footnotes {
   border-top: 1px solid #aaa;
   margin-top: 50px;
   font-size: 12px;
-  color: #777;
+  color: #777777;
 }
-#content .footnotes a {
-  color: #777;
+body #content .footnotes a {
+  color: #777777;
 }
-#content .footnotes ul,
-#content .footnotes p {
+body #content .footnotes ul,
+body #content .footnotes p {
   font-size: 14px;
+}
+body #footer {
+  position: relative;
+  font-size: 12px;
+  color: #777777;
+  clear: both;
+  max-width: 1200px;
+  padding: 40px 0;
+  margin: 70px auto 0 auto;
+  border-top: 1px solid #eee;
+}
+body #footer a {
+  color: #777777;
+  text-decoration: none;
+}
+body #footer ul {
+  list-style-type: none;
 }
