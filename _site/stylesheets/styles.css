@@ -154,6 +154,7 @@ body #header .shadow-overlay {
   background: url("../images/shadow.png") repeat-x;
 }
 body #content {
+  padding: 1em;
   margin: 40px auto 0 auto;
   max-width: 1200px;
 }
