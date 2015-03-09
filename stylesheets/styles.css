@@ -180,3 +180,11 @@ h4 {
   padding-left: 15px;
   border-left: 3px solid #ccc;
 }
+#content .footnotes {
+  border: 1px 0 0 0 solid #777;
+  margin-top: 50px;
+  color: #777;
+}
+#content .footnotes a {
+  color: #777;
+}
