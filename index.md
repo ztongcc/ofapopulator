@@ -54,6 +54,11 @@ In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it ea
 Also we use the Façade to break up the data source und delegate handling on Section level, making it easy to populate the sections of a table or collection view with different data and cells.  
 These section populators use data fetcher objects that will provide them with objects they fetch. Let it be from network, file system or some heavy computation. A data fetcher can be any object that conforms a certain protocol. There-for it is easy to adapt and integrate it in any project.
 
+Sample usage
+------------
+
+Let's build a simple app that downloads pictures from Flicker and displays it in a table view.
+
 [^1]: Ralf Westphal: [Taking the Single Responsibility Principle Seriously](http://www.developerfusion.com/article/137636/taking-the-single-responsibility-principle-seriously/). In: developerFusion. 2012-02-06
 
 [^2]: Robert C. Martin: [SRP: The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf) (PDF). 1997
