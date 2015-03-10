@@ -54,7 +54,7 @@
     }
 }
 
-- (id)activeTaget
+- (OFAAbstractPrivateSectionPopulator *)activeTaget
 {
     return (_tableViewPopulator) ? : _collectionViewPopulator;
 }
@@ -68,5 +68,13 @@
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
+}
+
+-(NSString *)indexTitle
+{
+    
+    if([[self activeTaget] sectionIndexTitle])
+        return [self activeTaget].sectionIndexTitle();
+    return @"";
 }
 @end

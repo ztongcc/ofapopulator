@@ -89,4 +89,5 @@
 {
     _heightForCellAtIndexPath = heightForCellAtIndexPath;
 }
+
 @end

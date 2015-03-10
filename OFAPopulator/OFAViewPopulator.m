@@ -107,6 +107,26 @@
     return tableView.rowHeight;
 }
 
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    
+    NSMutableArray *titles = [@[] mutableCopy];
+    [self.populators enumerateObjectsUsingBlock:^(OFASectionPopulator *pop, NSUInteger idx, BOOL *stop) {
+        NSString *title = [pop indexTitle];
+        if (title) {
+            [titles addObject:title];
+        }
+    }];
+    
+    NSSet *titleSet = [NSSet setWithArray:titles];
+    if ([titleSet count] == 1 && [[titleSet anyObject] isEqualToString:@""]) {
+        return nil;
+    }
+    
+    return [titles copy];
+    
+}
+
 
 @end
 

@@ -43,7 +43,9 @@
     section1Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
         NSLog(@"%@", obj);
     };
-    
+    section1Populator.sectionIndexTitle = ^(NSUInteger section){
+        return @"f";
+    };
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
@@ -54,6 +56,10 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
+    
+    section2Populator.sectionIndexTitle = ^(NSUInteger section){
+        return @"s";
+    };
 
     
     OFASectionPopulator *section3Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
@@ -82,6 +88,10 @@
     
     section3Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
         NSLog(@"%@", obj);
+    };
+    
+    section3Populator.sectionIndexTitle = ^(NSUInteger sectio){
+        return @"F";
     };
 
     

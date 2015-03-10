@@ -14,6 +14,7 @@
 @optional
 @property (nonatomic, copy) void (^objectOnCellSelected)(id obj, UIView *cell, NSIndexPath *indexPath);
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
+@property (nonatomic, copy) NSString* (^sectionIndexTitle)();
 
 @end
 
@@ -24,4 +25,6 @@
                          cellClass:(Class)cellClass
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id obj, id cell, NSIndexPath *indexPath))cellConfigurator;
+
+-(NSString *)indexTitle;
 @end
