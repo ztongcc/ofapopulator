@@ -16,4 +16,6 @@
                         cellClass:(Class)cellClass
                    cellIdentifier:(NSString *(^)(id, NSIndexPath *))cellIdentifier
                  cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator;
+
+@property (copy, nonatomic) void (^objectsSelected)(NSArray *objects, id cell, NSIndexPath *indexPath, BOOL isMaxSelected);
 @end

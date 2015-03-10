@@ -26,7 +26,7 @@
 {
     [super viewDidLoad];
 
-    OFASectionPopulator *section1Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
+    OFAMinMaxSelectionSectionPopulator *section1Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
                                                                                                minSelection:1
                                                                                                maxSelection:4
                                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
@@ -45,6 +45,20 @@
     };
     section1Populator.sectionIndexTitle = ^(NSUInteger section){
         return @"f";
+    };
+    
+    section1Populator.objectsSelected = ^(NSArray *objects, UITableViewCell *cell,NSIndexPath *inxPath, BOOL isMax){
+        if (isMax) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please proceed" message:@"Maximim Number is selected, please proceed" preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
+                                                                style: UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action)
+                                            {
+                                                [alertController dismissViewControllerAnimated:YES completion:nil];
+                                            }]
+             ];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
     };
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView

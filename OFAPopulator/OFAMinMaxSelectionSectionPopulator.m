@@ -16,7 +16,7 @@
 @property (nonatomic, assign, readonly) NSUInteger max;
 @property (nonatomic, strong) NSMutableArray *selectedObjectIndiciesQueue;
 @property (nonatomic, strong) NSArray *previouslySelectedIndiciesQueue;
-@property (nonatomic, copy) void (^ originalSelector)(id, UIView *, NSIndexPath *);
+@property (nonatomic, copy) void (^originalSelector)(id, UIView *, NSIndexPath *);
 
 @property (nonatomic, weak) id<OFADataFetcher> dataFetcher;
 @property (nonatomic, weak) UIView *parentView;
@@ -120,6 +120,34 @@
     } else {
         cell.selected = NO;
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    if (self.objectsSelected) {
+        NSMutableArray *selectedObjects = [@[] mutableCopy];
+        [self.selectedObjectIndiciesQueue enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
+            [selectedObjects addObject:[self.dataFetcher sectionObjects][[number integerValue]] ];
+        }];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.objectsSelected(
+                                 selectedObjects,
+                                 [tableView cellForRowAtIndexPath:indexPath],
+                                 indexPath,
+                                 self.max == [selectedObjects count]
+                                 );
+        });
+        
+        
+        
+        
+        
+    }
+
 }
 
 @end
