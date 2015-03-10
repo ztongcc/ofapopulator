@@ -52,6 +52,28 @@ a img {
 }
 
 
+
+.image-2x(@image, @width, @height, @repeat: no-repeat) {
+  @filename  : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[1]`;
+  @extension : ~`/(.*)\.(jpg|jpeg|png|gif)/.exec(@{image})[2]`;
+  background-image: ~`"url(@{filename}.@{extension})"`;
+  background-repeat: @repeat;
+
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      /* on retina, use image that's scaled by 2 */
+      background-image: ~`"url(@{filename}_2x.@{extension})"`;
+      background-size: @width @height;
+  }
+}
+
+
+
 body {
 	h1,h2, h3, h4 {
 	  text-align:center;
@@ -82,6 +104,10 @@ body {
 	    display:block;
 	    margin: 40px auto 0 auto;
 	    padding:0;
+			width: 250px;
+			height:265px;
+			.image-2x('../images/iphone.png', 250px, 265px);
+
 	  }
 	  .shadow-overlay {
 	    position: absolute;
