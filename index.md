@@ -51,7 +51,7 @@ But how to fix that?
 
 There is a wide variations of patters that might come in handy.  
 In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it easily adaptable for future developments (such as cubic collection views once Apple shows Google how to build data glasses).  
-Also we use the Façade to break up the data source und delegate handling on Section level, making it easy to populate the sections of a table or collection view with different data and cells.  
+Also we use the Façade to break up the data source and delegate handling on Section level, making it easy to populate the sections of a table or collection view with different data and cells.  
 These section populators use data fetcher objects that will provide them with objects they fetch. Let it be from network, file system or some heavy computation. A data fetcher can be any object that conforms a certain protocol. There-for it is easy to adapt and integrate it in any project.
 
 Sample usage
