@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>OFA Polulator</title>
+  <title>OFA Populator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
 
@@ -13,7 +13,7 @@
 
 <body>
   <section id="header">
-    <h1>OFA Polulator — Once and For All</h1>
+    <h1>OFA Populator — Once and For All</h1>
     <h2>A simple but powerful pattern for populating table &amp; collection views.</h2>
     <div class="screenshot">&nbsp;</div>
     <div class="shadow-overlay">&nbsp;</div>
@@ -78,6 +78,121 @@ These section populators use data fetcher objects that will provide them with ob
 <h2 id="sample-usage">Sample usage</h2>
 
 <p>Let’s build a simple app that downloads pictures from Flicker and displays it in a table view.</p>
+
+<p>First we need to create  a data fetcher that gets the images from Flickr and can offer them to the populator.<br />
+The protocol it needs to implement is OFDataFetcher</p>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+
+<span class="k">@protocol</span> <span class="nc">OFADataFetcher</span> <span class="o">&lt;</span><span class="bp">NSObject</span><span class="o">&gt;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSArray</span> <span class="o">*</span><span class="n">sectionObjects</span><span class="p">;</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchSuccess:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span><span class="p">;</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchedData:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">obj</span> <span class="nf">onDataFetcher:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">OFADataFetcher</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">dataFetcher</span><span class="p">;</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchingDataFaildWithError:</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">error</span> <span class="nf">onDataFetcher:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">OFADataFetcher</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">dataFetcher</span><span class="p">;</span>
+<span class="k">@end</span></code></pre></div>
+
+<ul>
+  <li><code>@property (nonatomic, strong) NSArray *sectionObjects;</code> should be self-explanatory</li>
+  <li><code>- (void)fetchSuccess:(void (^)(void))success;</code> will be called by the populator.
+The block is a call back to inform the populator the fetching was done</li>
+  <li><code>- (void)fetchedData:(id)obj onDataFetcher:(id&lt;OFADataFetcher&gt;)dataFetcher;</code></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import &quot;FlickerPhotoFetcher.h&quot;</span>
+<span class="cp">#import &quot;FlickrKit.h&quot;</span>
+
+<span class="cp">#import &quot;flickerCredentials.h&quot;</span>
+
+<span class="k">@interface</span> <span class="nc">FlickerPhotoFetcher</span> <span class="p">()</span>
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSMutableArray</span> <span class="o">*</span><span class="n">photos</span><span class="p">;</span>
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">copy</span><span class="p">)</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">success</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">FlickerPhotoFetcher</span>
+<span class="k">@synthesize</span> <span class="n">sectionObjects</span> <span class="o">=</span> <span class="n">_sectionObjects</span><span class="p">;</span>
+<span class="p">+(</span><span class="kt">void</span><span class="p">)</span><span class="nf">initialize</span>
+<span class="p">{</span>
+    <span class="p">[[</span><span class="n">FlickrKit</span> <span class="n">sharedFlickrKit</span><span class="p">]</span> <span class="nl">initializeWithAPIKey</span><span class="p">:</span><span class="n">FLICKR_KEY</span>
+                                         <span class="nl">sharedSecret</span><span class="p">:</span><span class="n">FLICKR_SECRET</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">instancetype</span><span class="p">)</span><span class="nf">init</span>
+<span class="p">{</span>
+    <span class="nb">self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">super</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="n">photos</span> <span class="o">=</span> <span class="p">[</span><span class="l">@[]</span> <span class="n">mutableCopy</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">-(</span><span class="bp">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nf">sectionObjects</span>
+<span class="p">{</span>
+    <span class="k">@synchronized</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">photos</span><span class="p">){</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">photos</span> <span class="k">copy</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchSuccess:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+<span class="p">{</span>
+    <span class="nb">self</span><span class="p">.</span><span class="n">success</span> <span class="o">=</span> <span class="n">success</span><span class="p">;</span>
+    <span class="n">FlickrKit</span> <span class="o">*</span><span class="n">fk</span> <span class="o">=</span> <span class="p">[</span><span class="n">FlickrKit</span> <span class="n">sharedFlickrKit</span><span class="p">];</span>
+    <span class="n">FKFlickrInterestingnessGetList</span> <span class="o">*</span><span class="n">interesting</span> <span class="o">=</span> <span class="p">[[</span><span class="n">FKFlickrInterestingnessGetList</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">fk</span> <span class="nl">call</span><span class="p">:</span><span class="n">interesting</span> <span class="nl">completion</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">response</span><span class="p">,</span> <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Note this is not the main thread!</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="bp">NSMutableArray</span> <span class="o">*</span><span class="n">photoURLs</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+            <span class="k">for</span> <span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="n">photoData</span> <span class="k">in</span> <span class="p">[</span><span class="n">response</span> <span class="nl">valueForKeyPath</span><span class="p">:</span><span class="s">@&quot;photos.photo&quot;</span><span class="p">])</span> <span class="p">{</span>
+                <span class="bp">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="n">fk</span> <span class="nl">photoURLForSize</span><span class="p">:</span> <span class="p">[[</span><span class="bp">UIScreen</span> <span class="n">mainScreen</span><span class="p">]</span> <span class="n">scale</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">?</span> <span class="nl">FKPhotoSizeMedium640</span> <span class="p">:</span> <span class="n">FKPhotoSizeSmall320</span> <span class="nl">fromPhotoDictionary</span><span class="p">:</span><span class="n">photoData</span><span class="p">];</span>
+                <span class="p">[</span><span class="n">photoURLs</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">url</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="p">[</span><span class="nb">self</span> <span class="nl">fetchPhotos</span><span class="p">:</span><span class="n">photoURLs</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}];</span>
+
+<span class="p">}</span>
+
+<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchingDataFaildWithError:</span><span class="p">(</span><span class="bp">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">error</span> <span class="nf">onDataFetcher:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">OFADataFetcher</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">dataFetcher</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchedData:</span><span class="p">(</span><span class="kt">id</span><span class="p">)</span><span class="nv">obj</span> <span class="nf">onDataFetcher:</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">OFADataFetcher</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">dataFetcher</span>
+<span class="p">{</span>
+    <span class="n">dispatch_async</span><span class="p">(</span><span class="n">dispatch_get_main_queue</span><span class="p">(),</span> <span class="o">^</span><span class="p">{</span>
+        <span class="nb">self</span><span class="p">.</span><span class="n">success</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="p">-(</span><span class="kt">void</span><span class="p">)</span><span class="nf">fetchPhotos:</span><span class="p">(</span><span class="bp">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">photpURLs</span>
+<span class="p">{</span>
+    <span class="bp">NSOperationQueue</span> <span class="o">*</span><span class="n">queue</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSOperationQueue</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+    <span class="k">__weak</span> <span class="k">typeof</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="nb">self</span><span class="p">;</span>
+
+    <span class="p">[[</span><span class="n">photpURLs</span> <span class="nl">subarrayWithRange</span><span class="p">:</span><span class="n">NSMakeRange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)]</span> <span class="nl">enumerateObjectsUsingBlock</span><span class="p">:</span><span class="o">^</span><span class="p">(</span><span class="bp">NSURL</span> <span class="o">*</span><span class="n">url</span><span class="p">,</span> <span class="bp">NSUInteger</span> <span class="n">idx</span><span class="p">,</span> <span class="kt">BOOL</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">queue</span> <span class="nl">addOperationWithBlock</span><span class="p">:</span> <span class="o">^</span> <span class="p">{</span>
+            <span class="k">typeof</span><span class="p">(</span><span class="n">weakSelf</span><span class="p">)</span> <span class="n">strongSelf</span> <span class="o">=</span> <span class="n">weakSelf</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">strongSelf</span><span class="p">){</span>
+                <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+                <span class="bp">NSData</span> <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSData</span> <span class="nl">dataWithContentsOfURL</span><span class="p">:</span><span class="n">url</span> <span class="nl">options</span><span class="p">:</span><span class="mi">0</span> <span class="nl">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+                <span class="bp">UIImage</span> <span class="o">*</span><span class="n">image</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">){</span>
+                    <span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIImage</span> <span class="nl">imageWithData</span><span class="p">:</span><span class="n">data</span><span class="p">];</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">@synchronized</span><span class="p">(</span><span class="nb">self</span><span class="p">.</span><span class="n">photos</span><span class="p">){</span>
+                        <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">photos</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">image</span><span class="p">];</span>
+                        <span class="p">[</span><span class="nb">self</span> <span class="nl">fetchedData</span><span class="p">:</span><span class="nb">self</span><span class="p">.</span><span class="n">photos</span> <span class="nl">onDataFetcher</span><span class="p">:</span><span class="nb">self</span><span class="p">];</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+            <span class="p">}</span>
+        <span class="p">}];</span>
+    <span class="p">}];</span>
+
+<span class="p">}</span>
+
+<span class="k">@end</span></code></pre></div>
 
 <div class="footnotes">
   <ol>

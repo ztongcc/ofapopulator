@@ -195,6 +195,9 @@ body #content blockquote {
   padding-left: 15px;
   border-left: 3px solid #ccc;
 }
+body #content code {
+  font-size: .8em;
+}
 body #content .footnotes {
   border-top: 1px solid #aaa;
   margin-top: 50px;
@@ -224,4 +227,20 @@ body #footer a {
 }
 body #footer ul {
   list-style-type: none;
+}
+.highlight {
+  background-color: #000;
+  margin: 10px;
+  max-width: 1400px;
+  overflow: scroll;
+}
+.highlight * {
+  font-family: "Courier New", monospace, serif;
+  font-size: 12px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+}
+.highlight pre {
+  padding: 1em;
 }
