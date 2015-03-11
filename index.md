@@ -59,6 +59,10 @@ Sample usage
 
 Let's build a simple app that downloads pictures from Flicker and displays it in a table view.
 
+First we need to create  a data fetcher that gets the images from Flickr and can offer them to the populator.  
+The protocol it needs to implement is OFDataFetcher
+
+
 [^1]: Ralf Westphal: [Taking the Single Responsibility Principle Seriously](http://www.developerfusion.com/article/137636/taking-the-single-responsibility-principle-seriously/). In: developerFusion. 2012-02-06
 
 [^2]: Robert C. Martin: [SRP: The Single Responsibility Principle](http://www.objectmentor.com/resources/articles/srp.pdf) (PDF). 1997
