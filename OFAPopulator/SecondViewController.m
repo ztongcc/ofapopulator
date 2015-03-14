@@ -39,6 +39,7 @@
         ExampleCollectionViewCell *cvc = (ExampleCollectionViewCell *)cell;
         cvc.textLabel.text = [cvc.textLabel.text stringByAppendingString:@"*"];
      };
+
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.collectionView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]

@@ -10,4 +10,10 @@
 
 @implementation OFACollectionViewSectionPopulator
 
+
+-(void)setSectionIndexTitle:(NSString *(^)())sectionIndexTitle
+{
+    NSAssert(NO,@"Section tittles currently aren't supported for Collection Views");
+    [super setSectionIndexTitle:sectionIndexTitle];
+}
 @end

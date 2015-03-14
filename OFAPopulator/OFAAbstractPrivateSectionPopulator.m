@@ -49,4 +49,10 @@
 }
 
 
+-(void)setSectionIndexTitle:(NSString *(^)())sectionIndexTitle
+{
+    _sectionIndexTitle = sectionIndexTitle;
+    
+}
+
 @end
