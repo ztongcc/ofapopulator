@@ -18,7 +18,6 @@
 @property (nonatomic, strong) NSArray *previouslySelectedIndiciesQueue;
 @property (nonatomic, copy) void (^originalSelector)(id, UIView *, NSIndexPath *);
 
-@property (nonatomic, weak) id<OFADataFetcher> dataFetcher;
 @property (nonatomic, weak) UIView *parentView;
 
 @end
@@ -39,7 +38,7 @@
                       cellIdentifier:cellIdentifier
                     cellConfigurator:cellConfigurator];
     if (self) {
-        _dataFetcher = dataFetcher;
+        self.dataFetcher = dataFetcher;
         _parentView = parentView;
         _min = min;
         _max = max;

@@ -10,6 +10,10 @@
 
 @implementation OFAAbstractPrivateSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
+@synthesize sectionIndexTitle = _sectionIndexTitle;
+@synthesize cellIdentifier = _cellIdentifier;
+@synthesize dataFetcher = _dataFetcher;
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 0;

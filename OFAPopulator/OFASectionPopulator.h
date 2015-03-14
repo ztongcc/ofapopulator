@@ -11,10 +11,14 @@
 
 @protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
+@property (nonatomic, strong) id<OFADataFetcher> dataFetcher;
+
 @optional
 @property (nonatomic, copy) void (^objectOnCellSelected)(id obj, UIView *cell, NSIndexPath *indexPath);
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 @property (nonatomic, copy) NSString* (^sectionIndexTitle)();
+@property (nonatomic, copy) NSString * (^cellIdentifier)(id obj, NSIndexPath *indexPath);
+
 
 @end
 
