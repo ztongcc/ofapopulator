@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ofapopulator"
+  s.name         = "OFAPopulator"
   s.version      = "0.0.1"
   s.summary      = "OFA Populator offers an easy to implement yet powerful way to populate table and collection views."
 
