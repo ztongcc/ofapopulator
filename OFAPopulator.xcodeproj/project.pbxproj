@@ -45,21 +45,21 @@
 		643863BE1AB77374004C84A9 /* OFASectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFASectionPopulator.m; path = OFA/OFASectionPopulator.m; sourceTree = "<group>"; };
 		643863BF1AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAAbstractPrivateSectionPopulator.h; path = OFA/OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
 		643863C01AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAAbstractPrivateSectionPopulator.m; path = OFA/OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
-		643863C11AB77374004C84A9 /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFACollectionViewSectionPopulator.h; path = OFA/OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
 		643863C21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFACollectionViewSectionPopulator.m; path = OFA/OFACollectionViewSectionPopulator.m; sourceTree = "<group>"; };
-		643863C31AB77374004C84A9 /* OFADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFADataFetcher.h; path = OFA/OFADataFetcher.h; sourceTree = "<group>"; };
-		643863C41AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAMinMaxSelectionSectionPopulator.h; path = OFA/OFAMinMaxSelectionSectionPopulator.h; sourceTree = "<group>"; };
 		643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAMinMaxSelectionSectionPopulator.m; path = OFA/OFAMinMaxSelectionSectionPopulator.m; sourceTree = "<group>"; };
 		643863C61AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAPrivateCollectionViewSectionPopulator.h; path = OFA/OFAPrivateCollectionViewSectionPopulator.h; sourceTree = "<group>"; };
 		643863C71AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAPrivateCollectionViewSectionPopulator.m; path = OFA/OFAPrivateCollectionViewSectionPopulator.m; sourceTree = "<group>"; };
 		643863C81AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAPrivateTableViewSectionPopulator.h; path = OFA/OFAPrivateTableViewSectionPopulator.h; sourceTree = "<group>"; };
 		643863C91AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAPrivateTableViewSectionPopulator.m; path = OFA/OFAPrivateTableViewSectionPopulator.m; sourceTree = "<group>"; };
-		643863CA1AB77374004C84A9 /* OFASectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFASectionPopulator.h; path = OFA/OFASectionPopulator.h; sourceTree = "<group>"; };
-		643863CB1AB77374004C84A9 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFASelectableCell.h; path = OFA/OFASelectableCell.h; sourceTree = "<group>"; };
-		643863CC1AB77374004C84A9 /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFATableViewSectionPopulator.h; path = OFA/OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
 		643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFATableViewSectionPopulator.m; path = OFA/OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
-		643863CE1AB77374004C84A9 /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAViewPopulator.h; path = OFA/OFAViewPopulator.h; sourceTree = "<group>"; };
 		643863CF1AB77374004C84A9 /* OFAViewPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAViewPopulator.m; path = OFA/OFAViewPopulator.m; sourceTree = "<group>"; };
+		6438640E1AB78AEA004C84A9 /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
+		6438640F1AB78AEA004C84A9 /* OFADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFADataFetcher.h; sourceTree = "<group>"; };
+		643864101AB78AEA004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAMinMaxSelectionSectionPopulator.h; sourceTree = "<group>"; };
+		643864111AB78AEA004C84A9 /* OFASectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionPopulator.h; sourceTree = "<group>"; };
+		643864121AB78AEA004C84A9 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASelectableCell.h; sourceTree = "<group>"; };
+		643864131AB78AEA004C84A9 /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
+		643864141AB78AEA004C84A9 /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAViewPopulator.h; sourceTree = "<group>"; };
 		644676B01AA50163005B456C /* OFAPopulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFAPopulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644676B41AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644676B51AA50163005B456C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6438640D1AB78AEA004C84A9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				6438640E1AB78AEA004C84A9 /* OFACollectionViewSectionPopulator.h */,
+				6438640F1AB78AEA004C84A9 /* OFADataFetcher.h */,
+				643864101AB78AEA004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */,
+				643864111AB78AEA004C84A9 /* OFASectionPopulator.h */,
+				643864121AB78AEA004C84A9 /* OFASelectableCell.h */,
+				643864131AB78AEA004C84A9 /* OFATableViewSectionPopulator.h */,
+				643864141AB78AEA004C84A9 /* OFAViewPopulator.h */,
+			);
+			name = Header;
+			path = OFA/Header;
+			sourceTree = "<group>";
+		};
 		644676A71AA50163005B456C = {
 			isa = PBXGroup;
 			children = (
@@ -212,17 +227,11 @@
 		6486FF351AA9EBEC0032D6F0 /* Public Interface */ = {
 			isa = PBXGroup;
 			children = (
+				6438640D1AB78AEA004C84A9 /* Header */,
 				643863BE1AB77374004C84A9 /* OFASectionPopulator.m */,
-				643863C11AB77374004C84A9 /* OFACollectionViewSectionPopulator.h */,
 				643863C21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m */,
-				643863C31AB77374004C84A9 /* OFADataFetcher.h */,
-				643863C41AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */,
 				643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */,
-				643863CA1AB77374004C84A9 /* OFASectionPopulator.h */,
-				643863CB1AB77374004C84A9 /* OFASelectableCell.h */,
-				643863CC1AB77374004C84A9 /* OFATableViewSectionPopulator.h */,
 				643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */,
-				643863CE1AB77374004C84A9 /* OFAViewPopulator.h */,
 				643863CF1AB77374004C84A9 /* OFAViewPopulator.m */,
 			);
 			name = "Public Interface";
