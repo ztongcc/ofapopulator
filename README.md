@@ -44,3 +44,9 @@ self.populator = [[OFASectionedPopulator alloc] initWithParentView:self.collecti
 Except passing in a collection view and a UICollectionViewCell class, the codes are identical.
 
 ![tableview](https://github.com/vikingosegundo/ofapopulator/raw/master/tableview.png) ![collectionview](https://github.com/vikingosegundo/ofapopulator/raw/master/collectionview.png)
+
+## Install
+
+* via Cocoapods:
+
+        pod 'OFAPopulator'
