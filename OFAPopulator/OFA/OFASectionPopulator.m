@@ -17,7 +17,7 @@
 @end
 
 @implementation OFASectionPopulator
-
+@synthesize dataFetcher = _dataFetcher;
 - (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
                          cellClass:(Class)cellClass
