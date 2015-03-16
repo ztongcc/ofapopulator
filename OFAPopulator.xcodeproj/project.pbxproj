@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		643863D01AB77374004C84A9 /* OFASectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863BE1AB77374004C84A9 /* OFASectionPopulator.m */; };
+		643863D11AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863C01AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m */; };
+		643863D21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863C21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m */; };
+		643863D31AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */; };
+		643863D41AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863C71AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m */; };
+		643863D51AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863C91AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m */; };
+		643863D61AB77374004C84A9 /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */; };
+		643863D71AB77374004C84A9 /* OFAViewPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 643863CF1AB77374004C84A9 /* OFAViewPopulator.m */; };
 		644676B61AA50163005B456C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676B51AA50163005B456C /* main.m */; };
 		644676B91AA50163005B456C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676B81AA50163005B456C /* AppDelegate.m */; };
 		644676BC1AA50163005B456C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676BB1AA50163005B456C /* ViewController.m */; };
@@ -14,23 +22,11 @@
 		644676C11AA50163005B456C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644676C01AA50163005B456C /* Images.xcassets */; };
 		644676C41AA50163005B456C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644676C21AA50163005B456C /* LaunchScreen.xib */; };
 		644676D01AA50163005B456C /* OFAPopulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676CF1AA50163005B456C /* OFAPopulatorTests.m */; };
-		644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676DA1AA501DA005B456C /* OFASectionPopulator.m */; };
 		644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataFetcher.m */; };
-		644676E41AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E31AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m */; };
-		644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E61AA50E9D005B456C /* OFAViewPopulator.m */; };
-		645566441AACB7A900E463E2 /* flickerCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 645566431AACB7A900E463E2 /* flickerCredentials.m */; };
-		6486FF381AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */; };
-		6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */; };
-		6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */; };
 		6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */; };
-		64C121F51AACD5A20071A63F /* FlickerPhotoFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C121F41AACD5A20071A63F /* FlickerPhotoFetcher.m */; };
-		64C122231AACD8400071A63F /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C1221E1AACD8280071A63F /* libFlickrKit.a */; };
 		64C122251AACD8B70071A63F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122241AACD8B70071A63F /* SystemConfiguration.framework */; };
 		64C122271AACD91C0071A63F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122261AACD91C0071A63F /* AssetsLibrary.framework */; };
 		64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */; };
-		64C122301AAD066B0071A63F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1222F1AAD066B0071A63F /* ThirdViewController.m */; };
-		64DD2B4B1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */; };
-		64DD2B4E1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B4D1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m */; };
 		64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B501AA8FE8F00A1402D /* SecondViewController.m */; };
 		64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B531AA904A100A1402D /* ExampleCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -43,30 +39,27 @@
 			remoteGlobalIDString = 644676AF1AA50163005B456C;
 			remoteInfo = OFAPopulator;
 		};
-		64C1221D1AACD8280071A63F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64C122181AACD8280071A63F /* FlickrKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 552D918C1753F8EF00BE3FEA;
-			remoteInfo = FlickrKit;
-		};
-		64C1221F1AACD8280071A63F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64C122181AACD8280071A63F /* FlickrKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 552D919A1753F8F000BE3FEA;
-			remoteInfo = FlickrKitTests;
-		};
-		64C122211AACD83B0071A63F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64C122181AACD8280071A63F /* FlickrKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 552D918B1753F8EF00BE3FEA;
-			remoteInfo = FlickrKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		643863BE1AB77374004C84A9 /* OFASectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFASectionPopulator.m; path = OFA/OFASectionPopulator.m; sourceTree = "<group>"; };
+		643863BF1AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAAbstractPrivateSectionPopulator.h; path = OFA/OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
+		643863C01AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAAbstractPrivateSectionPopulator.m; path = OFA/OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
+		643863C21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFACollectionViewSectionPopulator.m; path = OFA/OFACollectionViewSectionPopulator.m; sourceTree = "<group>"; };
+		643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAMinMaxSelectionSectionPopulator.m; path = OFA/OFAMinMaxSelectionSectionPopulator.m; sourceTree = "<group>"; };
+		643863C61AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAPrivateCollectionViewSectionPopulator.h; path = OFA/OFAPrivateCollectionViewSectionPopulator.h; sourceTree = "<group>"; };
+		643863C71AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAPrivateCollectionViewSectionPopulator.m; path = OFA/OFAPrivateCollectionViewSectionPopulator.m; sourceTree = "<group>"; };
+		643863C81AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAPrivateTableViewSectionPopulator.h; path = OFA/OFAPrivateTableViewSectionPopulator.h; sourceTree = "<group>"; };
+		643863C91AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAPrivateTableViewSectionPopulator.m; path = OFA/OFAPrivateTableViewSectionPopulator.m; sourceTree = "<group>"; };
+		643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFATableViewSectionPopulator.m; path = OFA/OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
+		643863CF1AB77374004C84A9 /* OFAViewPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OFAViewPopulator.m; path = OFA/OFAViewPopulator.m; sourceTree = "<group>"; };
+		6438640E1AB78AEA004C84A9 /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
+		6438640F1AB78AEA004C84A9 /* OFADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFADataFetcher.h; sourceTree = "<group>"; };
+		643864101AB78AEA004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAMinMaxSelectionSectionPopulator.h; sourceTree = "<group>"; };
+		643864111AB78AEA004C84A9 /* OFASectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionPopulator.h; sourceTree = "<group>"; };
+		643864121AB78AEA004C84A9 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASelectableCell.h; sourceTree = "<group>"; };
+		643864131AB78AEA004C84A9 /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
+		643864141AB78AEA004C84A9 /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAViewPopulator.h; sourceTree = "<group>"; };
 		644676B01AA50163005B456C /* OFAPopulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFAPopulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644676B41AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644676B51AA50163005B456C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,39 +73,14 @@
 		644676C91AA50163005B456C /* OFAPopulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFAPopulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		644676CE1AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644676CF1AA50163005B456C /* OFAPopulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFAPopulatorTests.m; sourceTree = "<group>"; };
-		644676D91AA501DA005B456C /* OFASectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASectionPopulator.h; sourceTree = "<group>"; };
-		644676DA1AA501DA005B456C /* OFASectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFASectionPopulator.m; sourceTree = "<group>"; };
-		644676DC1AA5027F005B456C /* OFADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFADataFetcher.h; sourceTree = "<group>"; };
 		644676DF1AA50609005B456C /* ExampleDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDataFetcher.h; sourceTree = "<group>"; };
 		644676E01AA50609005B456C /* ExampleDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataFetcher.m; sourceTree = "<group>"; };
-		644676E21AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAPrivateTableViewSectionPopulator.h; sourceTree = "<group>"; };
-		644676E31AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAPrivateTableViewSectionPopulator.m; sourceTree = "<group>"; };
-		644676E51AA50E9D005B456C /* OFAViewPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAViewPopulator.h; sourceTree = "<group>"; };
-		644676E61AA50E9D005B456C /* OFAViewPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAViewPopulator.m; sourceTree = "<group>"; };
-		645566421AACB7A900E463E2 /* flickerCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flickerCredentials.h; sourceTree = "<group>"; };
-		645566431AACB7A900E463E2 /* flickerCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = flickerCredentials.m; path = ../../flickerCredentials.m; sourceTree = "<group>"; };
-		6486FF361AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFACollectionViewSectionPopulator.h; sourceTree = "<group>"; };
-		6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFACollectionViewSectionPopulator.m; sourceTree = "<group>"; };
-		6486FF391AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFATableViewSectionPopulator.h; sourceTree = "<group>"; };
-		6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFATableViewSectionPopulator.m; sourceTree = "<group>"; };
-		6486FF3C1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAMinMaxSelectionSectionPopulator.h; sourceTree = "<group>"; };
-		6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAMinMaxSelectionSectionPopulator.m; sourceTree = "<group>"; };
 		6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
 		6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
-		64C121F31AACD5A20071A63F /* FlickerPhotoFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerPhotoFetcher.h; sourceTree = "<group>"; };
-		64C121F41AACD5A20071A63F /* FlickerPhotoFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerPhotoFetcher.m; sourceTree = "<group>"; };
-		64C122181AACD8280071A63F /* FlickrKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlickrKit.xcodeproj; path = ../../Downloads/FlickrKit/FlickrKit.xcodeproj; sourceTree = "<group>"; };
 		64C122241AACD8B70071A63F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		64C122261AACD91C0071A63F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		64C1222A1AAD033D0071A63F /* ExampleImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleImageCollectionViewCell.h; sourceTree = "<group>"; };
 		64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleImageCollectionViewCell.m; sourceTree = "<group>"; };
-		64C1222E1AAD066B0071A63F /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		64C1222F1AAD066B0071A63F /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		64D2BB6F1AAB32A200FFD537 /* OFASelectableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFASelectableCell.h; sourceTree = "<group>"; };
-		64DD2B491AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAAbstractPrivateSectionPopulator.h; sourceTree = "<group>"; };
-		64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAAbstractPrivateSectionPopulator.m; sourceTree = "<group>"; };
-		64DD2B4C1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFAPrivateCollectionViewSectionPopulator.h; sourceTree = "<group>"; };
-		64DD2B4D1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAPrivateCollectionViewSectionPopulator.m; sourceTree = "<group>"; };
 		64DD2B4F1AA8FE8F00A1402D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		64DD2B501AA8FE8F00A1402D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleCollectionViewCell.h; sourceTree = "<group>"; };
@@ -126,7 +94,6 @@
 			files = (
 				64C122271AACD91C0071A63F /* AssetsLibrary.framework in Frameworks */,
 				64C122251AACD8B70071A63F /* SystemConfiguration.framework in Frameworks */,
-				64C122231AACD8400071A63F /* libFlickrKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6438640D1AB78AEA004C84A9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				6438640E1AB78AEA004C84A9 /* OFACollectionViewSectionPopulator.h */,
+				6438640F1AB78AEA004C84A9 /* OFADataFetcher.h */,
+				643864101AB78AEA004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */,
+				643864111AB78AEA004C84A9 /* OFASectionPopulator.h */,
+				643864121AB78AEA004C84A9 /* OFASelectableCell.h */,
+				643864131AB78AEA004C84A9 /* OFATableViewSectionPopulator.h */,
+				643864141AB78AEA004C84A9 /* OFAViewPopulator.h */,
+			);
+			name = Header;
+			path = OFA/Header;
+			sourceTree = "<group>";
+		};
 		644676A71AA50163005B456C = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +130,6 @@
 				644676B21AA50163005B456C /* OFAPopulator */,
 				644676CC1AA50163005B456C /* OFAPopulatorTests */,
 				644676B11AA50163005B456C /* Products */,
-				64C122181AACD8280071A63F /* FlickrKit.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,10 +180,6 @@
 		6486FF321AA9EB3A0032D6F0 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				64C121F31AACD5A20071A63F /* FlickerPhotoFetcher.h */,
-				64C121F41AACD5A20071A63F /* FlickerPhotoFetcher.m */,
-				645566421AACB7A900E463E2 /* flickerCredentials.h */,
-				645566431AACB7A900E463E2 /* flickerCredentials.m */,
 				644676B31AA50163005B456C /* Supporting Files */,
 				644676B71AA50163005B456C /* AppDelegate.h */,
 				644676B81AA50163005B456C /* AppDelegate.m */,
@@ -221,8 +198,6 @@
 				6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */,
 				64C1222A1AAD033D0071A63F /* ExampleImageCollectionViewCell.h */,
 				64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */,
-				64C1222E1AAD066B0071A63F /* ThirdViewController.h */,
-				64C1222F1AAD066B0071A63F /* ThirdViewController.m */,
 			);
 			name = ExampleApp;
 			sourceTree = "<group>";
@@ -239,16 +214,12 @@
 		6486FF341AA9EB740032D6F0 /* Private Interface */ = {
 			isa = PBXGroup;
 			children = (
-				64DD2B491AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.h */,
-				64DD2B4A1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m */,
-				644676E21AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.h */,
-				644676E31AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m */,
-				64DD2B4C1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.h */,
-				64DD2B4D1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m */,
-				6486FF361AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.h */,
-				6486FF371AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m */,
-				6486FF391AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.h */,
-				6486FF3A1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m */,
+				643863BF1AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.h */,
+				643863C01AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m */,
+				643863C61AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.h */,
+				643863C71AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m */,
+				643863C81AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.h */,
+				643863C91AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m */,
 			);
 			name = "Private Interface";
 			sourceTree = "<group>";
@@ -256,25 +227,14 @@
 		6486FF351AA9EBEC0032D6F0 /* Public Interface */ = {
 			isa = PBXGroup;
 			children = (
-				644676D91AA501DA005B456C /* OFASectionPopulator.h */,
-				644676DA1AA501DA005B456C /* OFASectionPopulator.m */,
-				644676E51AA50E9D005B456C /* OFAViewPopulator.h */,
-				644676E61AA50E9D005B456C /* OFAViewPopulator.m */,
-				644676DC1AA5027F005B456C /* OFADataFetcher.h */,
-				6486FF3C1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.h */,
-				6486FF3D1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m */,
-				64D2BB6F1AAB32A200FFD537 /* OFASelectableCell.h */,
+				6438640D1AB78AEA004C84A9 /* Header */,
+				643863BE1AB77374004C84A9 /* OFASectionPopulator.m */,
+				643863C21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m */,
+				643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */,
+				643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */,
+				643863CF1AB77374004C84A9 /* OFAViewPopulator.m */,
 			);
 			name = "Public Interface";
-			sourceTree = "<group>";
-		};
-		64C122191AACD8280071A63F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				64C1221E1AACD8280071A63F /* libFlickrKit.a */,
-				64C122201AACD8280071A63F /* FlickrKitTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +251,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				64C122221AACD83B0071A63F /* PBXTargetDependency */,
 			);
 			name = OFAPopulator;
 			productName = OFAPopulator;
@@ -345,12 +304,6 @@
 			mainGroup = 644676A71AA50163005B456C;
 			productRefGroup = 644676B11AA50163005B456C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 64C122191AACD8280071A63F /* Products */;
-					ProjectRef = 64C122181AACD8280071A63F /* FlickrKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				644676AF1AA50163005B456C /* OFAPopulator */,
@@ -358,24 +311,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		64C1221E1AACD8280071A63F /* libFlickrKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFlickrKit.a;
-			remoteRef = 64C1221D1AACD8280071A63F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64C122201AACD8280071A63F /* FlickrKitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			name = FlickrKitTests.octest;
-			path = FlickrKitTests.xctest;
-			remoteRef = 64C1221F1AACD8280071A63F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		644676AE1AA50163005B456C /* Resources */ = {
@@ -406,21 +341,18 @@
 				644676BC1AA50163005B456C /* ViewController.m in Sources */,
 				64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */,
 				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
-				644676E41AA508E1005B456C /* OFAPrivateTableViewSectionPopulator.m in Sources */,
-				644676E71AA50E9D005B456C /* OFAViewPopulator.m in Sources */,
+				643863D71AB77374004C84A9 /* OFAViewPopulator.m in Sources */,
 				6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */,
-				6486FF3B1AAA6F8E0032D6F0 /* OFATableViewSectionPopulator.m in Sources */,
-				6486FF3E1AAA74AE0032D6F0 /* OFAMinMaxSelectionSectionPopulator.m in Sources */,
-				644676DB1AA501DA005B456C /* OFASectionPopulator.m in Sources */,
-				64C122301AAD066B0071A63F /* ThirdViewController.m in Sources */,
-				64DD2B4B1AA8FB0600A1402D /* OFAAbstractPrivateSectionPopulator.m in Sources */,
-				64C121F51AACD5A20071A63F /* FlickerPhotoFetcher.m in Sources */,
+				643863D51AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m in Sources */,
+				643863D21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m in Sources */,
 				64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */,
+				643863D61AB77374004C84A9 /* OFATableViewSectionPopulator.m in Sources */,
+				643863D01AB77374004C84A9 /* OFASectionPopulator.m in Sources */,
+				643863D31AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m in Sources */,
 				644676B91AA50163005B456C /* AppDelegate.m in Sources */,
-				64DD2B4E1AA8FBD700A1402D /* OFAPrivateCollectionViewSectionPopulator.m in Sources */,
-				645566441AACB7A900E463E2 /* flickerCredentials.m in Sources */,
-				6486FF381AAA6F490032D6F0 /* OFACollectionViewSectionPopulator.m in Sources */,
 				644676B61AA50163005B456C /* main.m in Sources */,
+				643863D11AB77374004C84A9 /* OFAAbstractPrivateSectionPopulator.m in Sources */,
+				643863D41AB77374004C84A9 /* OFAPrivateCollectionViewSectionPopulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,11 +371,6 @@
 			isa = PBXTargetDependency;
 			target = 644676AF1AA50163005B456C /* OFAPopulator */;
 			targetProxy = 644676CA1AA50163005B456C /* PBXContainerItemProxy */;
-		};
-		64C122221AACD83B0071A63F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FlickrKit;
-			targetProxy = 64C122211AACD83B0071A63F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
