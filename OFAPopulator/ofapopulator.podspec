@@ -57,7 +57,6 @@ self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
   #
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,10 +105,10 @@ self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "OFAPopulator/OFA/**.*"
+  s.source_files  = "OFA/**/*.*"
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "OFAPopulator/OFA/Header/**.*"
+  s.public_header_files = "OFA/Header/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,7 +131,7 @@ self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  # s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
