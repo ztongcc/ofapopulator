@@ -105,10 +105,10 @@ self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "OFA/**/*.*"
+  s.source_files  = "OFAPopulator/OFA/**/*.*"
   # s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "OFA/Header/**/*.h"
+  s.public_header_files = "OFAPopulator/OFA/Header/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
