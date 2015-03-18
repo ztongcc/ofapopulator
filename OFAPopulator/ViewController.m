@@ -29,7 +29,6 @@
                                                                                                minSelection:1
                                                                                                maxSelection:4
                                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
-                                                                                                  cellClass:[ExampleTableViewCell class]
                                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
                                                                                            cellConfigurator:^(id obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
@@ -62,7 +61,6 @@
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
                                                                                  dataFetcher:[[ExampleDataFetcher alloc] init]
-                                                                                   cellClass:[UITableViewCell class]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
                                                                             cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {

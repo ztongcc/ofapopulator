@@ -13,7 +13,6 @@
                      minSelection:(NSUInteger)min
                      maxSelection:(NSUInteger)max
                       dataFetcher:(id<OFADataFetcher>)dataFetcher
-                        cellClass:(Class)cellClass
                    cellIdentifier:(NSString *(^)(id, NSIndexPath *))cellIdentifier
                  cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator;
 

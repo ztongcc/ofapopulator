@@ -20,7 +20,6 @@
 @synthesize dataFetcher = _dataFetcher;
 - (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
-                         cellClass:(Class)cellClass
                     cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator
 {
@@ -28,13 +27,11 @@
         if ([parentView isKindOfClass:[UITableView class]]) {
             _tableViewPopulator = [[OFATableViewSectionPopulator alloc] initWithParentView:(UITableView *)parentView
                                                                                dataFetcher:dataFetcher
-                                                                                 cellClass:cellClass
                                                                             cellIdentifier:cellIdentifier
                                                                           cellConfigurator:cellConfigurator];
         } else if ([parentView isKindOfClass:[UICollectionView class]]) {
             _collectionViewPopulator = [[OFACollectionViewSectionPopulator alloc] initWithParentView:(UICollectionView *)parentView
                                                                                          dataFetcher:dataFetcher
-                                                                                           cellClass:cellClass
                                                                                       cellIdentifier:cellIdentifier
                                                                                     cellConfigurator:cellConfigurator];
         }

@@ -26,7 +26,6 @@
 
 - (instancetype)initWithParentView:(UIView *)parentView
                        dataFetcher:(id<OFADataFetcher>)dataFetcher
-                         cellClass:(Class)cellClass
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id obj, id cell, NSIndexPath *indexPath))cellConfigurator;
 
