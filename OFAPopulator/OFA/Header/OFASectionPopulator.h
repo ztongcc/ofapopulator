@@ -7,11 +7,11 @@
 //
 
 @import UIKit;
-#import "OFADataFetcher.h"
+#import "OFADataProvider.h"
 
 @protocol OFASectionPopulator <UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (nonatomic, strong) id<OFADataFetcher> dataFetcher;
+@property (nonatomic, strong) id<OFADataProvider> dataProvider;
 
 @optional
 @property (nonatomic, copy) void (^objectOnCellSelected)(id obj, UIView *cell, NSIndexPath *indexPath);
@@ -25,7 +25,7 @@
 @interface OFASectionPopulator : NSProxy <OFASectionPopulator>
 
 - (instancetype)initWithParentView:(UIView *)parentView
-                       dataFetcher:(id<OFADataFetcher>)dataFetcher
+                      dataProvider:(id<OFADataProvider>)dataProvider
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id obj, id cell, NSIndexPath *indexPath))cellConfigurator;
 

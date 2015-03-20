@@ -22,7 +22,7 @@
 		644676C11AA50163005B456C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644676C01AA50163005B456C /* Images.xcassets */; };
 		644676C41AA50163005B456C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 644676C21AA50163005B456C /* LaunchScreen.xib */; };
 		644676D01AA50163005B456C /* OFAPopulatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676CF1AA50163005B456C /* OFAPopulatorTests.m */; };
-		644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataFetcher.m */; };
+		644676E11AA50609005B456C /* ExampleDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 644676E01AA50609005B456C /* ExampleDataProvider.m */; };
 		6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */; };
 		64C122251AACD8B70071A63F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122241AACD8B70071A63F /* SystemConfiguration.framework */; };
 		64C122271AACD91C0071A63F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122261AACD91C0071A63F /* AssetsLibrary.framework */; };
@@ -73,8 +73,8 @@
 		644676C91AA50163005B456C /* OFAPopulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFAPopulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		644676CE1AA50163005B456C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		644676CF1AA50163005B456C /* OFAPopulatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFAPopulatorTests.m; sourceTree = "<group>"; };
-		644676DF1AA50609005B456C /* ExampleDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDataFetcher.h; sourceTree = "<group>"; };
-		644676E01AA50609005B456C /* ExampleDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataFetcher.m; sourceTree = "<group>"; };
+		644676DF1AA50609005B456C /* ExampleDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleDataProvider.h; sourceTree = "<group>"; };
+		644676E01AA50609005B456C /* ExampleDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleDataProvider.m; sourceTree = "<group>"; };
 		6486FF3F1AAB26930032D6F0 /* ExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewCell.h; sourceTree = "<group>"; };
 		6486FF401AAB26930032D6F0 /* ExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewCell.m; sourceTree = "<group>"; };
 		64C122241AACD8B70071A63F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -85,6 +85,7 @@
 		64DD2B501AA8FE8F00A1402D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleCollectionViewCell.h; sourceTree = "<group>"; };
 		64DD2B531AA904A100A1402D /* ExampleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleCollectionViewCell.m; sourceTree = "<group>"; };
+		64FD47021ABBABC200F16DDA /* OFADataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFADataProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 				643864121AB78AEA004C84A9 /* OFASelectableCell.h */,
 				643864131AB78AEA004C84A9 /* OFATableViewSectionPopulator.h */,
 				643864141AB78AEA004C84A9 /* OFAViewPopulator.h */,
+				64FD47021ABBABC200F16DDA /* OFADataProvider.h */,
 			);
 			name = Header;
 			path = OFA/Header;
@@ -185,8 +187,8 @@
 				644676B81AA50163005B456C /* AppDelegate.m */,
 				644676BA1AA50163005B456C /* ViewController.h */,
 				644676BB1AA50163005B456C /* ViewController.m */,
-				644676DF1AA50609005B456C /* ExampleDataFetcher.h */,
-				644676E01AA50609005B456C /* ExampleDataFetcher.m */,
+				644676DF1AA50609005B456C /* ExampleDataProvider.h */,
+				644676E01AA50609005B456C /* ExampleDataProvider.m */,
 				64DD2B4F1AA8FE8F00A1402D /* SecondViewController.h */,
 				64DD2B501AA8FE8F00A1402D /* SecondViewController.m */,
 				64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */,
@@ -340,7 +342,7 @@
 				64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */,
 				644676BC1AA50163005B456C /* ViewController.m in Sources */,
 				64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */,
-				644676E11AA50609005B456C /* ExampleDataFetcher.m in Sources */,
+				644676E11AA50609005B456C /* ExampleDataProvider.m in Sources */,
 				643863D71AB77374004C84A9 /* OFAViewPopulator.m in Sources */,
 				6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */,
 				643863D51AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m in Sources */,

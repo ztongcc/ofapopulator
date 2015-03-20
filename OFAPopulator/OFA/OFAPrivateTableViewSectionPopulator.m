@@ -13,16 +13,16 @@
 @synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
 
 - (instancetype)initWithParentView:(UITableView *)parentView
-                       dataFetcher:(id<OFADataFetcher>)dataFetcher
+                      dataProvider:(id<OFADataProvider>)dataProvider
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id, UITableViewCell *, NSIndexPath *))cellConfigurator
 {
     if (self = [super init]) {
         _parentView         = parentView;
-        self.dataFetcher    = dataFetcher;
+        self.dataProvider    = dataProvider;
         
         __weak typeof(self) weakSelf = self;
-        [dataFetcher fetchSuccess:^{
+        [dataProvider dataAvailable:^{
             typeof(weakSelf) self = weakSelf;
             if (self) {
                 [self.parentView reloadData];
@@ -42,14 +42,14 @@
 - (NSInteger)   tableView:(UITableView *)tableView
     numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.dataFetcher sectionObjects] count];
+    return [[self.dataProvider sectionObjects] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier([self.dataFetcher sectionObjects][indexPath.row], indexPath) forIndexPath:indexPath];
-    self.cellConfigurator([self.dataFetcher sectionObjects][indexPath.row], cell, indexPath);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier([self.dataProvider sectionObjects][indexPath.row], indexPath) forIndexPath:indexPath];
+    self.cellConfigurator([self.dataProvider sectionObjects][indexPath.row], cell, indexPath);
     return cell;
 }
 
@@ -57,7 +57,7 @@
 {
     if (self.objectOnCellSelected) {
         self.objectOnCellSelected(
-                                    [self.dataFetcher sectionObjects][indexPath.row],
+                                    [self.dataProvider sectionObjects][indexPath.row],
                                     [tableView cellForRowAtIndexPath:indexPath],
                                     indexPath
                                   );
@@ -67,7 +67,7 @@
 {
     if (self.objectOnCellSelected) {
         self.objectOnCellSelected(
-                                  [self.dataFetcher sectionObjects][indexPath.row],
+                                  [self.dataProvider sectionObjects][indexPath.row],
                                   [tableView cellForRowAtIndexPath:indexPath],
                                   indexPath
                                   );
@@ -77,7 +77,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.heightForCellAtIndexPath) {
-        return self.heightForCellAtIndexPath([self.dataFetcher sectionObjects][indexPath.row],indexPath);
+        return self.heightForCellAtIndexPath([self.dataProvider sectionObjects][indexPath.row],indexPath);
 
     }
     return tableView.rowHeight;

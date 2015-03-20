@@ -14,7 +14,7 @@
 @property (nonatomic, copy) void (^cellConfigurator)(id, UICollectionViewCell *, NSIndexPath *);
 
 - (instancetype)initWithParentView:(UICollectionView *)parentView
-                       dataFetcher:(id<OFADataFetcher>)dataFetcher
+                      dataProvider:(id<OFADataProvider>)dataProvider
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id, UICollectionViewCell *, NSIndexPath *))cellConfigurator;
 @end

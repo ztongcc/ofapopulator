@@ -15,7 +15,7 @@
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 
 - (instancetype)initWithParentView:(UITableView *)parentView
-                       dataFetcher:(id<OFADataFetcher>)dataFetcher
+                      dataProvider:(id<OFADataProvider>)dataProvider
                     cellIdentifier:(NSString * (^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id, UITableViewCell *, NSIndexPath *))cellConfigurator;
 

@@ -7,7 +7,7 @@
 //
 
 #import "OFAMinMaxSelectionSectionPopulator.h"
-#import "OFADataFetcher.h"
+#import "OFADataProvider.h"
 
 
 
@@ -26,17 +26,17 @@
 -(instancetype)initWithParentView:(UIView *)parentView
                      minSelection:(NSUInteger)min
                      maxSelection:(NSUInteger)max
-                      dataFetcher:(id<OFADataFetcher>)dataFetcher
+                     dataProvider:(id<OFADataProvider>)dataProvider
                    cellIdentifier:(NSString *(^)(id, NSIndexPath *))cellIdentifier
                  cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator
 {
     NSAssert(max >= min, @"max must be greater tha min");
     self = [super initWithParentView:parentView
-                         dataFetcher:dataFetcher
+                        dataProvider:dataProvider
                       cellIdentifier:cellIdentifier
                     cellConfigurator:cellConfigurator];
     if (self) {
-        self.dataFetcher = dataFetcher;
+        self.dataProvider = dataProvider;
         _parentView = parentView;
         _min = min;
         _max = max;
@@ -68,7 +68,7 @@
             
             NSMutableArray *selectedObjects = [@[] mutableCopy];
             [self.selectedObjectIndiciesQueue enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
-                [selectedObjects addObject:[self.dataFetcher sectionObjects][[number integerValue]] ];
+                [selectedObjects addObject:[self.dataProvider sectionObjects][[number integerValue]] ];
             }];
             
             NSMutableSet *deselectedIndicies = [NSMutableSet setWithArray:self.previouslySelectedIndiciesQueue];
@@ -127,7 +127,7 @@
     if (self.objectsSelected) {
         NSMutableArray *selectedObjects = [@[] mutableCopy];
         [self.selectedObjectIndiciesQueue enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
-            [selectedObjects addObject:[self.dataFetcher sectionObjects][[number integerValue]] ];
+            [selectedObjects addObject:[self.dataProvider sectionObjects][[number integerValue]] ];
         }];
         
         dispatch_async(dispatch_get_main_queue(), ^{

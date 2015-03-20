@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ExampleDataFetcher.h"
+#import "ExampleDataProvider.h"
 
 #import "OFAMinMaxSelectionSectionPopulator.h"
 #import "OFAViewPopulator.h"
@@ -26,11 +26,11 @@
     [super viewDidLoad];
 
     OFAMinMaxSelectionSectionPopulator *section1Populator = [[OFAMinMaxSelectionSectionPopulator alloc] initWithParentView:self.tableView
-                                                                                               minSelection:1
-                                                                                               maxSelection:4
-                                                                                                dataFetcher:[[ExampleDataFetcher alloc] init]
-                                                                                             cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
-                                                                                           cellConfigurator:^(id obj, UITableViewCell *cell, NSIndexPath *indexPath)
+                                                                                                              minSelection:1
+                                                                                                              maxSelection:4
+                                                                                                              dataProvider:[[ExampleDataProvider alloc] init]
+                                                                                                            cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
+                                                                                                          cellConfigurator:^(id obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
@@ -60,7 +60,7 @@
     };
     
     OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
-                                                                                 dataFetcher:[[ExampleDataFetcher alloc] init]
+                                                                                dataProvider:[[ExampleDataProvider alloc] init]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
                                                                             cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {

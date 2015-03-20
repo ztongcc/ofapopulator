@@ -17,21 +17,22 @@
 @end
 
 @implementation OFASectionPopulator
-@synthesize dataFetcher = _dataFetcher;
+@synthesize dataProvider = _dataProvider;
 - (instancetype)initWithParentView:(UIView *)parentView
-                       dataFetcher:(id<OFADataFetcher>)dataFetcher
+                      dataProvider:(id<OFADataProvider>)dataProvider
                     cellIdentifier:(NSString *(^)(id obj, NSIndexPath *indexPath))cellIdentifier
                   cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator
 {
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
             _tableViewPopulator = [[OFATableViewSectionPopulator alloc] initWithParentView:(UITableView *)parentView
-                                                                               dataFetcher:dataFetcher
+                                                                            dataProvider:dataProvider
                                                                             cellIdentifier:cellIdentifier
                                                                           cellConfigurator:cellConfigurator];
         } else if ([parentView isKindOfClass:[UICollectionView class]]) {
             _collectionViewPopulator = [[OFACollectionViewSectionPopulator alloc] initWithParentView:(UICollectionView *)parentView
-                                                                                         dataFetcher:dataFetcher
+                                        
+                                                                                        dataProvider:dataProvider
                                                                                       cellIdentifier:cellIdentifier
                                                                                     cellConfigurator:cellConfigurator];
         }

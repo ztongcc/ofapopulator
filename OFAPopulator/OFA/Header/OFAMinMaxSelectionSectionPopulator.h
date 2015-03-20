@@ -12,7 +12,7 @@
 -(instancetype)initWithParentView:(UIView *)parentView
                      minSelection:(NSUInteger)min
                      maxSelection:(NSUInteger)max
-                      dataFetcher:(id<OFADataFetcher>)dataFetcher
+                     dataProvider:(id<OFADataProvider>)dataProvider
                    cellIdentifier:(NSString *(^)(id, NSIndexPath *))cellIdentifier
                  cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator;
 

@@ -12,7 +12,7 @@
 @synthesize objectOnCellSelected = _objectOnCellSelected;
 @synthesize sectionIndexTitle = _sectionIndexTitle;
 @synthesize cellIdentifier = _cellIdentifier;
-@synthesize dataFetcher = _dataFetcher;
+@synthesize dataProvider = _dataProvider;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

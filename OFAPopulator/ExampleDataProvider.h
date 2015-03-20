@@ -1,13 +1,13 @@
 //
-//  ExampleDataFetcher.h
+//  ExampleDataProvider.h
 //  OFAPopulator
 //
 //  Created by Manuel Meyer on 02.03.15.
 //  Copyright (c) 2015 com.vs. All rights reserved.
 //
 
-#import "OFADataFetcher.h"
+#import "OFADataProvider.h"
 
-@interface ExampleDataFetcher : NSObject <OFADataFetcher>
+@interface ExampleDataProvider : NSObject <OFADataProvider>
 
 @end
