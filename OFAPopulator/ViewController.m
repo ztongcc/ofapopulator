@@ -64,7 +64,7 @@
         }
     };
     
-    OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableViewg
+    OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
                                                                                 dataProvider:[[ExampleDataProvider alloc] init]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
                                                                             cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
