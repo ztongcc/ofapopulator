@@ -194,8 +194,14 @@
 @end
 
 @implementation OFAViewPopulator
-- (instancetype)initWithParentView:(UIView *)parentView sectionPopulators:(NSArray *)populators
+- (instancetype)initWithSectionPopulators:(NSArray *)populators
 {
+    NSSet *sectionParenView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
+    if ([sectionParenView count] != 1) {
+        NSAssert(NO, @"all populators must have the same parent view");
+        return nil;
+    }
+    UIView *parentView = [sectionParenView anyObject];
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
             self.privatePopulator = [[OFATableViewPopulator alloc] initWithParentView:(UITableView *)parentView

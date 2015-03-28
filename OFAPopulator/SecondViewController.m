@@ -49,8 +49,7 @@
     }];
     
 
-    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.collectionView
-                                                sectionPopulators:@[section1Populator, section2Populator]];
+    self.populator = [[OFAViewPopulator alloc] initWithSectionPopulators:@[section1Populator, section2Populator]];
     
 }
 

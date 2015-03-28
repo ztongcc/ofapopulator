@@ -9,6 +9,5 @@
 @import UIKit;
 
 @interface OFAViewPopulator : NSProxy <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
-- (instancetype)initWithParentView:(UIView *)parentView
-                 sectionPopulators:(NSArray *)populators;
+- (instancetype)initWithSectionPopulators:(NSArray *)populators;
 @end

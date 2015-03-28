@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString* (^sectionIndexTitle)();
 @property (nonatomic, copy) NSString * (^cellIdentifier)(id obj, NSIndexPath *indexPath);
 
-
+@property (nonatomic, weak) UIView *parentView;
 @end
 
 @interface OFASectionPopulator : NSProxy <OFASectionPopulator>

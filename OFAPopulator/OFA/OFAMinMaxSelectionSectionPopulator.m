@@ -18,7 +18,6 @@
 @property (nonatomic, strong) NSArray *previouslySelectedIndiciesQueue;
 @property (nonatomic, copy) void (^originalSelector)(id, UIView *, NSIndexPath *);
 
-@property (nonatomic, weak) UIView *parentView;
 
 @end
 
@@ -37,7 +36,6 @@
                     cellConfigurator:cellConfigurator];
     if (self) {
         self.dataProvider = dataProvider;
-        _parentView = parentView;
         _min = min;
         _max = max;
         _selectedObjectIndiciesQueue = [[NSMutableArray alloc] init];

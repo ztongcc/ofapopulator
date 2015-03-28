@@ -8,6 +8,12 @@
 
 #import "OFAPrivateCollectionViewSectionPopulator.h"
 
+@interface OFAPrivateCollectionViewSectionPopulator ()
+@property(nonatomic, weak) UICollectionView *parentCollectionView;
+
+@end
+
+
 @implementation OFAPrivateCollectionViewSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
 
@@ -17,8 +23,8 @@
                   cellConfigurator:(void (^)(id, UICollectionViewCell *, NSIndexPath *))cellConfigurator
 {
     if (self = [super init]) {
-        _parentView         = parentView;
-        self.dataProvider    = dataProvider;
+        self.parentCollectionView   = parentView;
+        self.dataProvider           = dataProvider;
         
         __weak typeof(self) weakSelf = self;
         [dataProvider dataAvailable:^{
@@ -65,5 +71,9 @@
     }
 }
 
+-(UICollectionView *)parentView
+{
+    return self.parentCollectionView;
+}
 
 @end

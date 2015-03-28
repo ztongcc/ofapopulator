@@ -31,7 +31,6 @@
                                                                           cellConfigurator:cellConfigurator];
         } else if ([parentView isKindOfClass:[UICollectionView class]]) {
             _collectionViewPopulator = [[OFACollectionViewSectionPopulator alloc] initWithParentView:(UICollectionView *)parentView
-                                        
                                                                                         dataProvider:dataProvider
                                                                                       cellIdentifier:cellIdentifier
                                                                                     cellConfigurator:cellConfigurator];
@@ -74,5 +73,11 @@
     if([[self activeTaget] sectionIndexTitle])
         return [self activeTaget].sectionIndexTitle();
     return @"";
+}
+
+-(UIView *)parentView
+{
+    OFAAbstractPrivateSectionPopulator *pop = (_tableViewPopulator) ? : _collectionViewPopulator;
+    return pop.parentView;
 }
 @end

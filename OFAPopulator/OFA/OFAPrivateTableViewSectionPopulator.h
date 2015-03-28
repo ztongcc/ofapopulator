@@ -10,7 +10,8 @@
 
 @interface OFAPrivateTableViewSectionPopulator : OFAAbstractPrivateSectionPopulator
 
-@property(nonatomic, weak) UITableView *parentView;
+
+@property (nonatomic, weak, readonly) UIView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UITableViewCell *, NSIndexPath *);
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 

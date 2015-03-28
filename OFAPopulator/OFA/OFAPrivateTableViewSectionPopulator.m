@@ -8,6 +8,10 @@
 
 #import "OFAPrivateTableViewSectionPopulator.h"
 
+@interface OFAPrivateTableViewSectionPopulator ()
+@property(nonatomic, weak) UITableView *parentTableView;
+@end
+
 @implementation OFAPrivateTableViewSectionPopulator
 
 @synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
@@ -18,14 +22,13 @@
                   cellConfigurator:(void (^)(id, UITableViewCell *, NSIndexPath *))cellConfigurator
 {
     if (self = [super init]) {
-        _parentView         = parentView;
         self.dataProvider    = dataProvider;
-        
+        self.parentTableView = parentView;
         __weak typeof(self) weakSelf = self;
         [dataProvider dataAvailable:^{
             typeof(weakSelf) self = weakSelf;
             if (self) {
-                [self.parentView reloadData];
+                [self.parentTableView reloadData];
             }
         }];
         _cellConfigurator   = cellConfigurator;
@@ -87,6 +90,11 @@
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     _heightForCellAtIndexPath = heightForCellAtIndexPath;
+}
+
+-(UIView *)parentView
+{
+    return self.parentTableView;
 }
 
 @end

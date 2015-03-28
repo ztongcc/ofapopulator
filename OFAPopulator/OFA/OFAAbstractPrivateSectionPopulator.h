@@ -10,4 +10,5 @@
 #import "OFASectionPopulator.h"
 
 @interface OFAAbstractPrivateSectionPopulator : NSObject <OFASectionPopulator>
+
 @end

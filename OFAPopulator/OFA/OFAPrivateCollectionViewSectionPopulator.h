@@ -10,7 +10,7 @@
 
 @interface OFAPrivateCollectionViewSectionPopulator : OFAAbstractPrivateSectionPopulator
 
-@property(nonatomic, weak) UICollectionView *parentView;
+@property(nonatomic, weak, readonly) UICollectionView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UICollectionViewCell *, NSIndexPath *);
 
 - (instancetype)initWithParentView:(UICollectionView *)parentView

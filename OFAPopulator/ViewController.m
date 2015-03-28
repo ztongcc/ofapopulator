@@ -16,6 +16,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) OFAViewPopulator   *populator;
 @end
 
@@ -37,7 +38,6 @@
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
 
-    
     section1Populator.objectOnCellSelected = ^(id obj, UIView *cell, NSIndexPath *indexPath){
         NSLog(@"%@", obj);
     };
@@ -47,19 +47,24 @@
     
     section1Populator.objectsSelected = ^(NSArray *objects, UITableViewCell *cell,NSIndexPath *inxPath, BOOL isMax){
         if (isMax) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please proceed" message:@"Maximim Number is selected, please proceed" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please proceed"
+                                                                                     message:@"Maximum Number is selected, please proceed"
+                                                                              preferredStyle:UIAlertControllerStyleAlert];
                 [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                 style: UIAlertActionStyleDefault
                                                               handler:^(UIAlertAction *action)
                                             {
-                                                [alertController dismissViewControllerAnimated:YES completion:nil];
+                                                [alertController dismissViewControllerAnimated:YES
+                                                                                    completion:nil];
                                             }]
              ];
-            [self presentViewController:alertController animated:YES completion:nil];
+            [self presentViewController:alertController
+                               animated:YES
+                             completion:nil];
         }
     };
     
-    OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
+    OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableViewg
                                                                                 dataProvider:[[ExampleDataProvider alloc] init]
                                                                               cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
                                                                             cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
@@ -71,10 +76,8 @@
     section2Populator.sectionIndexTitle = ^(NSUInteger section){
         return @"s";
     };
-
     
-    self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
-                                                sectionPopulators:@[section1Populator, section2Populator]];
+    self.populator = [[OFAViewPopulator alloc] initWithSectionPopulators:@[section1Populator, section2Populator]];
 }
 
 @end
