@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "OFAPopulator"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "OFA Populator offers an easy to implement yet powerful way to populate table and collection views."
 
   s.description  = <<-DESC
@@ -23,8 +23,7 @@ sectionPopulator.sectionIndexTitle = ^(NSUInteger section){
 };
 
 
-self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
-                                            sectionPopulators:@[sectionPopulator]];
+self.populator = [[OFAViewPopulator alloc] initWithSectionPopulators:@[sectionPopulator]];
 
                    ``
                    DESC
@@ -34,7 +33,7 @@ self.populator = [[OFAViewPopulator alloc] initWithParentView:self.tableView
   s.author             = { "Manuel Meyer" => "manuel.meyer@goeuro.com" }
   s.social_media_url   = "http://twitter.com/vikingosegundo"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/vikingosegundo/ofapopulator.git", :tag => "0.0.3" }
+  s.source       = { :git => "https://github.com/vikingosegundo/ofapopulator.git", :tag => "0.0.4" }
   s.source_files  = "OFAPopulator/OFA/**/*.*"
   s.public_header_files = "OFAPopulator/OFA/Header/**/*.h"
 
