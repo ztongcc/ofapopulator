@@ -12,6 +12,7 @@
 
 @property(nonatomic, weak, readonly) UICollectionView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UICollectionViewCell *, NSIndexPath *);
+@property (nonatomic, copy) UIView *(^headerForSection)(NSUInteger section);
 
 - (instancetype)initWithParentView:(UICollectionView *)parentView
                       dataProvider:(id<OFADataProvider>)dataProvider
