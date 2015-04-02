@@ -66,6 +66,10 @@
 {
     [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
 }
+-(void)setHeaderForSection:(UIView *(^)(NSUInteger))headerForSection
+{
+    [[self activeTaget] setHeaderForSection:headerForSection];
+}
 
 -(NSString *)indexTitle
 {
@@ -80,4 +84,6 @@
     OFAAbstractPrivateSectionPopulator *pop = (_tableViewPopulator) ? : _collectionViewPopulator;
     return pop.parentView;
 }
+
+
 @end

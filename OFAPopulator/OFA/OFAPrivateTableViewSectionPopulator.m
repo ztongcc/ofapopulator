@@ -15,6 +15,7 @@
 @implementation OFAPrivateTableViewSectionPopulator
 
 @synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
+@synthesize headerForSection = _headerForSection;
 
 - (instancetype)initWithParentView:(UITableView *)parentView
                       dataProvider:(id<OFADataProvider>)dataProvider
@@ -86,11 +87,33 @@
     return tableView.rowHeight;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (self.headerForSection) {
+        CGFloat height = [self.headerForSection(section) frame].size.height;
+        return height;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (self.headerForSection) {
+        return self.headerForSection(section);
+    }
+    return nil;
+}
+
 
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     _heightForCellAtIndexPath = heightForCellAtIndexPath;
 }
+-(void)setHeaderForSection:(UIView *(^)(NSUInteger))headerForSection
+{
+    _headerForSection = headerForSection;
+}
+
 
 -(UIView *)parentView
 {

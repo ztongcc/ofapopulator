@@ -13,6 +13,8 @@
 
 @property (nonatomic, weak, readonly) UIView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UITableViewCell *, NSIndexPath *);
+@property (nonatomic, copy) UIView *(^headerForSection)(NSUInteger section);
+
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 
 - (instancetype)initWithParentView:(UITableView *)parentView
