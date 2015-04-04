@@ -45,6 +45,23 @@
         return @"f";
     };
     
+    
+    section1Populator.header = ^(NSUInteger section){
+        return ^{
+            UIView *v =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, 20)];
+            v.backgroundColor = [UIColor orangeColor];
+            return v;
+        }();
+    };
+    
+    section1Populator.footer = ^(NSUInteger section){
+        return ^{
+            UIView *v =[[UIView alloc] initWithFrame:CGRectMake(0, 0, 2, 20)];
+            v.backgroundColor = [UIColor orangeColor];
+            return v;
+        }();
+    };
+    
     section1Populator.objectsSelected = ^(NSArray *objects, UITableViewCell *cell,NSIndexPath *inxPath, BOOL isMax){
         if (isMax) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Please proceed"

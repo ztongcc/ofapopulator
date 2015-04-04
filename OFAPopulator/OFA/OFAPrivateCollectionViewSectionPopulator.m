@@ -16,7 +16,7 @@
 
 @implementation OFAPrivateCollectionViewSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
-@synthesize headerForSection = _headerForSection;
+@synthesize header = _header;
 
 - (instancetype)initWithParentView:(UICollectionView *)parentView
                       dataProvider:(id<OFADataProvider>)dataProvider

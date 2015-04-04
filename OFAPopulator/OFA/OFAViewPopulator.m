@@ -98,6 +98,27 @@
 }
 
 
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    id<OFASectionPopulator> pop = self.populators[section];
+    
+    if ([pop respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+        return [pop tableView:tableView heightForFooterInSection:section];
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    id<OFASectionPopulator> pop = self.populators[section];
+    
+    if ([pop respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+        return [pop tableView:tableView viewForFooterInSection:section];
+    }
+    return nil;
+}
+
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];

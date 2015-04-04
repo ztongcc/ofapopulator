@@ -66,9 +66,15 @@
 {
     [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
 }
--(void)setHeaderForSection:(UIView *(^)(NSUInteger))headerForSection
+
+-(void)setHeader:(UIView *(^)(NSUInteger))headerForSection
 {
-    [[self activeTaget] setHeaderForSection:headerForSection];
+    [[self activeTaget] setHeader:headerForSection];
+}
+
+-(void)setFooter:(UIView *(^)(NSUInteger))footer
+{
+    [[self activeTaget] setFooter:footer];
 }
 
 -(NSString *)indexTitle

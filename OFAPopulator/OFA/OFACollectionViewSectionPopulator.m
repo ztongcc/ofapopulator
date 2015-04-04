@@ -17,7 +17,7 @@
     [super setSectionIndexTitle:sectionIndexTitle];
 }
 
--(void)setHeaderForSection:(UIView *(^)(NSUInteger))headerForSection
+-(void)setHeader:(UIView *(^)(NSUInteger))headerForSection
 {
     NSAssert(NO,@"Section tittles currently aren't supported for Collection Views");
 }

@@ -18,7 +18,8 @@
 @property (nonatomic, copy) CGFloat (^heightForCellAtIndexPath)(id obj, NSIndexPath *indexPath);
 @property (nonatomic, copy) NSString* (^sectionIndexTitle)();
 @property (nonatomic, copy) NSString * (^cellIdentifier)(id obj, NSIndexPath *indexPath);
-@property (nonatomic, copy) UIView* (^headerForSection)(NSUInteger section);
+@property (nonatomic, copy) UIView* (^header)(NSUInteger section);
+@property (nonatomic, copy) UIView* (^footer)(NSUInteger section);
 
 @property (nonatomic, weak) UIView *parentView;
 @end

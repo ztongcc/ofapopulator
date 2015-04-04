@@ -15,7 +15,9 @@
 @implementation OFAPrivateTableViewSectionPopulator
 
 @synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
-@synthesize headerForSection = _headerForSection;
+@synthesize header = _header;
+@synthesize footer = _footer;
+
 
 - (instancetype)initWithParentView:(UITableView *)parentView
                       dataProvider:(id<OFADataProvider>)dataProvider
@@ -89,8 +91,17 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (self.headerForSection) {
-        CGFloat height = [self.headerForSection(section) frame].size.height;
+    if (self.header) {
+        CGFloat height = [self.header(section) frame].size.height;
+        return height;
+    }
+    return 0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (self.footer) {
+        CGFloat height = [self.footer(section) frame].size.height;
         return height;
     }
     return 0;
@@ -98,20 +109,33 @@
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (self.headerForSection) {
-        return self.headerForSection(section);
+    if (self.header) {
+        return self.header(section);
     }
     return nil;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (self.footer) {
+        return self.footer(section);
+    }
+    return nil;
+}
 
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     _heightForCellAtIndexPath = heightForCellAtIndexPath;
 }
--(void)setHeaderForSection:(UIView *(^)(NSUInteger))headerForSection
+
+-(void)setHeader:(UIView *(^)(NSUInteger))header
 {
-    _headerForSection = headerForSection;
+    _header = header;
+}
+
+-(void)setFooter:(UIView *(^)(NSUInteger))footer
+{
+    _footer = footer;
 }
 
 
