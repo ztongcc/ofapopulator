@@ -1,5 +1,9 @@
+@dark-bg: #222;
+@light-bg: #fff;
+
 html, body {
 	border: 0;
+	background-color: @dark-bg;
   box-sizing: border-box;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
@@ -89,7 +93,7 @@ body {
 	  padding: 40px 0 0;
 	  position: relative;
 	  overflow: hidden;
-	  background: #222;
+	  background: @dark-bg;
 	  h1, h2{
 	    color: white;
 	  }
@@ -117,12 +121,18 @@ body {
 	    height: 9px;
 	    background: url("../images/shadow.png") repeat-x;
 	  }
+
+
+	}
+	.container {
+		background: @light-bg;
+		padding-top: 4em;
 	}
 
-
 	#content {
+		background: @light-bg;
 		padding:1em;
-	  margin: 40px auto 0 auto;
+	  margin: 0px auto 0 auto;
 	  max-width:1200px;
 	  p, h1, h2, h3, h4, ul {
 	    font-weight: 200;
@@ -172,7 +182,7 @@ body {
 		max-width: 1200px;
 		padding: 40px 0;
 		margin: 70px auto 0 auto;
-		border-top: 1px solid #eee;
+		border-top: 1px solid #333;
 		a {
 			color: @passiveColor;
 			text-decoration:none;
@@ -185,7 +195,7 @@ body {
 
 
 .highlight{
-  background-color: #222;
+  background-color: @dark-bg;
   margin:10px;
   max-width:1400px;
   overflow:scroll;

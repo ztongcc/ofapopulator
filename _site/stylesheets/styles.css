@@ -1,6 +1,7 @@
 html,
 body {
   border: 0;
+  background-color: #222222;
   box-sizing: border-box;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
@@ -127,7 +128,7 @@ body #header {
   padding: 40px 0 0;
   position: relative;
   overflow: hidden;
-  background: #222;
+  background: #222222;
 }
 body #header h1,
 body #header h2 {
@@ -165,9 +166,14 @@ body #header .shadow-overlay {
   height: 9px;
   background: url("../images/shadow.png") repeat-x;
 }
+body .container {
+  background: #ffffff;
+  padding-top: 4em;
+}
 body #content {
+  background: #ffffff;
   padding: 1em;
-  margin: 40px auto 0 auto;
+  margin: 0px auto 0 auto;
   max-width: 1200px;
 }
 body #content p,
@@ -219,7 +225,7 @@ body #footer {
   max-width: 1200px;
   padding: 40px 0;
   margin: 70px auto 0 auto;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #333;
 }
 body #footer a {
   color: #777777;
@@ -229,7 +235,7 @@ body #footer ul {
   list-style-type: none;
 }
 .highlight {
-  background-color: #222;
+  background-color: #222222;
   margin: 10px;
   max-width: 1400px;
   overflow: scroll;
