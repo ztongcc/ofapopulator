@@ -75,6 +75,17 @@ In OFA we use Farçade to encapsulate the (not too heavy) lifting and make it ea
 Also we use the Façade to break up the data source and delegate handling on Section level, making it easy to populate the sections of a table or collection view with different data and cells.<br />
 These section populators use data fetcher objects that will provide them with objects they fetch. Let it be from network, file system or some heavy computation. A data fetcher can be any object that conforms a certain protocol. There-for it is easy to adapt and integrate it in any project.</p>
 
+<h2 id="install">Install</h2>
+
+<ul>
+  <li>
+    <p>via cocoapods <code>pod 'OFAPopulator'</code></p>
+  </li>
+  <li>
+    <p>or via GitHub <a href="https://github.com/vikingosegundo/ofapopulator">github.com/vikingosegundo/ofapopulator</a></p>
+  </li>
+</ul>
+
 <h2 id="sample-usage">Sample usage</h2>
 
 <p>Let’s build a simple app that downloads pictures from Flicker and displays it in a table view.</p>

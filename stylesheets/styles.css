@@ -229,7 +229,7 @@ body #footer ul {
   list-style-type: none;
 }
 .highlight {
-  background-color: #000;
+  background-color: #222;
   margin: 10px;
   max-width: 1400px;
   overflow: scroll;
