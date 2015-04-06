@@ -1,16 +1,6 @@
-@dark-bg: #222;
-@light-bg: #fff;
 
 html, body {
-	border: 0;
-	background-color: @dark-bg;
-  box-sizing: border-box;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-  line-height: 1.4;
-  font-size: 14px;
-	margin: 0;
-	padding: 0;
+
 }
 
 div, span, object, iframe, img, table, caption, thead, tbody,
@@ -46,7 +36,6 @@ table {
 }
 
 
-@passiveColor : #777;
 a img {
   border: 0;
 }
@@ -80,6 +69,22 @@ a img {
 
 
 body {
+	@passiveColor : #777;
+
+	@dark-bg: #222;
+	@light-bg: #fff;
+
+	border: 0;
+	background-color: @dark-bg;
+	box-sizing: border-box;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #333;
+	line-height: 1.4;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+
+
 	h1,h2, h3, h4 {
 	  text-align:center;
 	  font-weight: 200;
@@ -189,23 +194,22 @@ body {
 			list-style-type:none;
 		}
 	}
-}
+	.highlight{
+	  background-color: @dark-bg;
+	  margin:10px;
+	  max-width:1400px;
+	  overflow:scroll;
+	  *{
+	    font-family:"Courier New" , monospace, serif;
+	    font-size: 12px;
+	    font-style: normal;
+	    font-variant: normal;
+	    font-weight: normal;
+	  }
+	  pre {
+	    padding:1em;
 
+	  }
+	}
 
-.highlight{
-  background-color: @dark-bg;
-  margin:10px;
-  max-width:1400px;
-  overflow:scroll;
-  *{
-    font-family:"Courier New" , monospace, serif;
-    font-size: 12px;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-  }
-  pre {
-    padding:1em;
-
-  }
 }
