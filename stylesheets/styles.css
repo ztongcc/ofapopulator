@@ -1,4 +1,3 @@
-html,
 body {
   border: 0;
   background-color: #222222;
@@ -10,107 +9,107 @@ body {
   margin: 0;
   padding: 0;
 }
-div,
-span,
-object,
-iframe,
-img,
-table,
-caption,
-thead,
-tbody,
-tfoot,
-tr,
-tr,
-td,
-article,
-aside,
-canvas,
-details,
-figure,
-hgroup,
-menu,
-nav,
-footer,
-header,
-section,
-summary,
-mark,
-audio,
-video {
+body div,
+body span,
+body object,
+body iframe,
+body img,
+body table,
+body caption,
+body thead,
+body tbody,
+body tfoot,
+body tr,
+body tr,
+body td,
+body article,
+body aside,
+body canvas,
+body details,
+body figure,
+body hgroup,
+body menu,
+body nav,
+body footer,
+body header,
+body section,
+body summary,
+body mark,
+body audio,
+body video {
   border: 0;
   margin: 0;
   padding: 0;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-address,
-cit,
-code,
-del,
-dfn,
-em,
-ins,
-q,
-samp,
-small,
-strong,
-b,
-i,
-hr,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-legend,
-label {
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body blockquote,
+body pre,
+body a,
+body abbr,
+body address,
+body cit,
+body code,
+body del,
+body dfn,
+body em,
+body ins,
+body q,
+body samp,
+body small,
+body strong,
+body b,
+body i,
+body hr,
+body dl,
+body dt,
+body dd,
+body ol,
+body ul,
+body li,
+body fieldset,
+body legend,
+body label {
   border: 0;
   font-size: 100%;
   vertical-align: baseline;
   margin: 0;
   padding: 0;
 }
-article,
-aside,
-canvas,
-figure,
-figure img,
-figcaption,
-hgroup,
-footer,
-header,
-nav,
-section,
-audio,
-video {
+body article,
+body aside,
+body canvas,
+body figure,
+body figure img,
+body figcaption,
+body hgroup,
+body footer,
+body header,
+body nav,
+body section,
+body audio,
+body video {
   display: block;
 }
-table {
+body table {
   border-collapse: separate;
   border-spacing: 0;
 }
-table caption,
-table th,
-table td {
+body table caption,
+body table th,
+body table td {
   text-align: left;
   vertical-align: middle;
 }
-a img {
+body a img {
   border: 0;
 }
-:focus {
+body :focus {
   outline: 0;
 }
 body h1,
@@ -224,8 +223,6 @@ body #footer {
   clear: both;
   max-width: 1200px;
   padding: 40px 0;
-  margin: 70px auto 0 auto;
-  border-top: 1px solid #333;
 }
 body #footer a {
   color: #777777;
@@ -234,19 +231,19 @@ body #footer a {
 body #footer ul {
   list-style-type: none;
 }
-.highlight {
+body .highlight {
   background-color: #222222;
   margin: 10px;
   max-width: 1400px;
   overflow: scroll;
 }
-.highlight * {
+body .highlight * {
   font-family: "Courier New", monospace, serif;
   font-size: 12px;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
 }
-.highlight pre {
+body .highlight pre {
   padding: 1em;
 }
