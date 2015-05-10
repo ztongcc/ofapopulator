@@ -8,6 +8,10 @@
 
 #import "OFAAbstractPrivateSectionPopulator.h"
 
+
+@interface OFAAbstractPrivateSectionPopulator ()
+@end
+
 @implementation OFAAbstractPrivateSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
 @synthesize sectionIndexTitle = _sectionIndexTitle;

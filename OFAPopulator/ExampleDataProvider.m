@@ -33,4 +33,14 @@
     self.success();
 }
 
+
+-(void)dealloc
+{
+    ;
+}
+
+-(NSArray *)sectionObjects
+{
+    return _sectionObjects;
+}
 @end

@@ -14,7 +14,7 @@
 
 
 @implementation ExampleTableViewCell
-
+@dynamic selected;
 - (void)awakeFromNib {
 }
 

@@ -25,6 +25,7 @@
 @end
 
 @interface OFASectionPopulator : NSProxy <OFASectionPopulator>
+@property (nonatomic, strong) id<OFADataProvider> dataProvider;
 
 - (instancetype)initWithParentView:(UIView *)parentView
                       dataProvider:(id<OFADataProvider>)dataProvider

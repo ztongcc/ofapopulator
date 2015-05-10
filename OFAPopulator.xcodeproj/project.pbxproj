@@ -27,6 +27,7 @@
 		64C122251AACD8B70071A63F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122241AACD8B70071A63F /* SystemConfiguration.framework */; };
 		64C122271AACD91C0071A63F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C122261AACD91C0071A63F /* AssetsLibrary.framework */; };
 		64C1222C1AAD033D0071A63F /* ExampleImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */; };
+		64D872EF1AFD743C00D8944D /* OFAReorderSectionPopulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D872EE1AFD743C00D8944D /* OFAReorderSectionPopulator.m */; };
 		64DD2B511AA8FE8F00A1402D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B501AA8FE8F00A1402D /* SecondViewController.m */; };
 		64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DD2B531AA904A100A1402D /* ExampleCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,8 @@
 		64C122261AACD91C0071A63F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		64C1222A1AAD033D0071A63F /* ExampleImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleImageCollectionViewCell.h; sourceTree = "<group>"; };
 		64C1222B1AAD033D0071A63F /* ExampleImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleImageCollectionViewCell.m; sourceTree = "<group>"; };
+		64D872ED1AFD743C00D8944D /* OFAReorderSectionPopulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFAReorderSectionPopulator.h; path = ../../OFAReorderSectionPopulator.h; sourceTree = "<group>"; };
+		64D872EE1AFD743C00D8944D /* OFAReorderSectionPopulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFAReorderSectionPopulator.m; sourceTree = "<group>"; };
 		64DD2B4F1AA8FE8F00A1402D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		64DD2B501AA8FE8F00A1402D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		64DD2B521AA904A100A1402D /* ExampleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleCollectionViewCell.h; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		6438640D1AB78AEA004C84A9 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				64D872ED1AFD743C00D8944D /* OFAReorderSectionPopulator.h */,
 				6438640E1AB78AEA004C84A9 /* OFACollectionViewSectionPopulator.h */,
 				6438640F1AB78AEA004C84A9 /* OFADataFetcher.h */,
 				643864101AB78AEA004C84A9 /* OFAMinMaxSelectionSectionPopulator.h */,
@@ -235,6 +239,7 @@
 				643863C51AB77374004C84A9 /* OFAMinMaxSelectionSectionPopulator.m */,
 				643863CD1AB77374004C84A9 /* OFATableViewSectionPopulator.m */,
 				643863CF1AB77374004C84A9 /* OFAViewPopulator.m */,
+				64D872EE1AFD743C00D8944D /* OFAReorderSectionPopulator.m */,
 			);
 			name = "Public Interface";
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				TargetAttributes = {
 					644676AF1AA50163005B456C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = JLDZ9V2EQ7;
 					};
 					644676C81AA50163005B456C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -346,6 +352,7 @@
 				643863D71AB77374004C84A9 /* OFAViewPopulator.m in Sources */,
 				6486FF411AAB26930032D6F0 /* ExampleTableViewCell.m in Sources */,
 				643863D51AB77374004C84A9 /* OFAPrivateTableViewSectionPopulator.m in Sources */,
+				64D872EF1AFD743C00D8944D /* OFAReorderSectionPopulator.m in Sources */,
 				643863D21AB77374004C84A9 /* OFACollectionViewSectionPopulator.m in Sources */,
 				64DD2B541AA904A100A1402D /* ExampleCollectionViewCell.m in Sources */,
 				643863D61AB77374004C84A9 /* OFATableViewSectionPopulator.m in Sources */,
@@ -476,9 +483,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OFAPopulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "~/Downloads/FlickrKit/**";
 			};
 			name = Debug;
@@ -487,9 +497,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OFAPopulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "~/Downloads/FlickrKit/**";
 			};
 			name = Release;

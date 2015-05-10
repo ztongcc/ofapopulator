@@ -30,6 +30,7 @@
         tv.dataSource = self;
         tv.delegate = self;
         tv.allowsMultipleSelection = YES;
+        [tv setEditing:YES animated:YES];
     }
     return self;
 }
@@ -81,7 +82,7 @@
 {
     id<OFASectionPopulator> pop = self.populators[section];
     
-    if ([pop respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+    if ([pop respondsToSelector:_cmd]) {
         return [pop tableView:tableView heightForHeaderInSection:section];
     }
     return 0;
@@ -91,7 +92,7 @@
 {
     id<OFASectionPopulator> pop = self.populators[section];
     
-    if ([pop respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+    if ([pop respondsToSelector:_cmd]) {
         return [pop tableView:tableView viewForHeaderInSection:section];
     }
     return nil;
@@ -102,7 +103,7 @@
 {
     id<OFASectionPopulator> pop = self.populators[section];
     
-    if ([pop respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+    if ([pop respondsToSelector:_cmd]) {
         return [pop tableView:tableView heightForFooterInSection:section];
     }
     return 0;
@@ -112,7 +113,7 @@
 {
     id<OFASectionPopulator> pop = self.populators[section];
     
-    if ([pop respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+    if ([pop respondsToSelector:_cmd]) {
         return [pop tableView:tableView viewForFooterInSection:section];
     }
     return nil;
@@ -122,7 +123,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id<OFASectionPopulator> pop = self.populators[indexPath.section];
-    if ([pop respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+    if ([pop respondsToSelector:_cmd]) {
         return [pop tableView:tableView heightForRowAtIndexPath:indexPath];
     }
     return tableView.rowHeight;
@@ -149,7 +150,48 @@
 }
 
 
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    if ([pop respondsToSelector:_cmd]){
+        return [pop tableView:tableView canMoveRowAtIndexPath:indexPath];
+    }
+    return NO;
+}
 
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    id<OFASectionPopulator> pop = self.populators[sourceIndexPath.section];
+    if ([pop respondsToSelector:_cmd]) {
+        [pop tableView:tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
+    }
+
+}
+
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    if ([[pop class] instancesRespondToSelector:_cmd] ) {
+        return [pop tableView:tableView canEditRowAtIndexPath:indexPath];
+    }
+    return NO;
+}
+
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    if ([pop respondsToSelector:_cmd]){
+        return [pop tableView:tableView editingStyleForRowAtIndexPath:indexPath];
+    }
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
 @end
 
 #pragma mark -

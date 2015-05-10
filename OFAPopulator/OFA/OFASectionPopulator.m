@@ -24,6 +24,7 @@
                   cellConfigurator:(void (^)(id, id, NSIndexPath *))cellConfigurator
 {
     if (self) {
+        self.dataProvider = _dataProvider;
         if ([parentView isKindOfClass:[UITableView class]]) {
             _tableViewPopulator = [[OFATableViewSectionPopulator alloc] initWithParentView:(UITableView *)parentView
                                                                             dataProvider:dataProvider
@@ -89,6 +90,21 @@
 {
     OFAAbstractPrivateSectionPopulator *pop = (_tableViewPopulator) ? : _collectionViewPopulator;
     return pop.parentView;
+}
+
+-(BOOL)respondsToSelector:(SEL)aSelector
+{
+    return [[self class] instancesRespondToSelector: aSelector];
+}
+
+-(id<OFADataProvider>)dataProvider
+{
+    return _dataProvider;
+}
+
+-(void)setDataProvider:(id<OFADataProvider>)dataProvider
+{
+    _dataProvider = dataProvider;
 }
 
 

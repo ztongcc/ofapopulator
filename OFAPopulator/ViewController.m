@@ -13,6 +13,7 @@
 #import "OFAViewPopulator.h"
 
 #import "ExampleTableViewCell.h"
+#import "OFAReorderSectionPopulator.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -81,13 +82,15 @@
         }
     };
     
-    OFASectionPopulator *section2Populator = [[OFASectionPopulator alloc] initWithParentView:self.tableView
-                                                                                dataProvider:[[ExampleDataProvider alloc] init]
-                                                                              cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
-                                                                            cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
+    OFASectionPopulator *section2Populator = [[OFAReorderSectionPopulator alloc] initWithParentView:self.tableView
+                                                                                       dataProvider:[[ExampleDataProvider alloc] init]
+                                                                                     cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){ return @"Section2"; }
+                                                                                   cellConfigurator:^(NSNumber *obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
         cell.textLabel.text = [NSString stringWithFormat:@"%@", @([obj doubleValue] * [obj doubleValue])];
         cell.textLabel.backgroundColor = [UIColor clearColor];
+    } reorderCallBack:^(id sourceObj, id destinationObj, NSIndexPath *sourceIndexpath, NSIndexPath *destinationIndexPath) {
+        ;
     }];
     
     section2Populator.sectionIndexTitle = ^(NSUInteger section){
