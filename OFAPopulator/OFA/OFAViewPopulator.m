@@ -188,6 +188,17 @@
     return UITableViewCellEditingStyleDelete;
 }
 
+
+-(NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    id<OFASectionPopulator> dPop = self.populators[proposedDestinationIndexPath.section];
+    if ([dPop respondsToSelector:_cmd]){
+        return [dPop tableView:tableView targetIndexPathForMoveFromRowAtIndexPath:sourceIndexPath toProposedIndexPath:proposedDestinationIndexPath];
+    }
+    return sourceIndexPath;
+}
+
+
 -(BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NO;
