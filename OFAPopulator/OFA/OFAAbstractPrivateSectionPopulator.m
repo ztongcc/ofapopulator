@@ -14,6 +14,8 @@
 
 @implementation OFAAbstractPrivateSectionPopulator
 @synthesize objectOnCellSelected = _objectOnCellSelected;
+@synthesize objectOnCellDeselected = _objectOnCellDeselected;
+
 @synthesize sectionIndexTitle = _sectionIndexTitle;
 @synthesize cellIdentifier = _cellIdentifier;
 @synthesize dataProvider = _dataProvider;

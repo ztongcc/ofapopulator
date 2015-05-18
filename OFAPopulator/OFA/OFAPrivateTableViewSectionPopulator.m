@@ -71,8 +71,8 @@
 }
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.objectOnCellSelected) {
-        self.objectOnCellSelected(
+    if (self.objectOnCellDeselected) {
+        self.objectOnCellDeselected(
                                   [self.dataProvider sectionObjects][indexPath.row],
                                   [tableView cellForRowAtIndexPath:indexPath],
                                   indexPath

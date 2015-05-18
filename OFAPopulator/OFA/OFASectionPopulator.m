@@ -63,6 +63,12 @@
     [[self activeTaget] setObjectOnCellSelected:objectOnCellSelected];
 }
 
+-(void)setObjectOnCellDeselected:(void (^)(id, UIView *, NSIndexPath *))objectOnCellDeselected
+{
+    [[self activeTaget] setObjectOnCellDeselected:objectOnCellDeselected];
+}
+
+
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
