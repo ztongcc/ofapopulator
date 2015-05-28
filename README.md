@@ -37,13 +37,63 @@ OFASectionPopulator *section1Populator = [[OFASectionPopulator alloc] initWithPa
 }];
 
 
-self.populator = [[OFASectionedPopulator alloc] initWithParentView:self.collectionView
-                                                 sectionPopulators:@[section1Populator]];
+self.populator = [[OFASectionedPopulator alloc] initWithSectionPopulators:@[section1Populator]];
 ```
 
 Except passing in a collection view and a UICollectionViewCell class, the codes are identical.
 
 ![tableview](https://github.com/vikingosegundo/ofapopulator/raw/master/tableview.png) ![collectionview](https://github.com/vikingosegundo/ofapopulator/raw/master/collectionview.png)
+
+
+Swift Example
+
+```Swift
+
+
+self.activityDataProvider = ActivityDataProvider(activities:activities)
+let cellIdentifier = { (activity: AnyObject!, indexPath:NSIndexPath!) -> String! in
+    let s : String! = "ActivityCell"
+    return s
+}
+
+let cellConfigurator = { (obj :AnyObject!, cell: AnyObject!, indexPath:NSIndexPath!) -> Void in
+    if let theCell = cell as? ActivityTableCell, activity = obj as? Activity,c = self.activityCellConfigurator{
+        c(obj: activity, cell: theCell, indexPath: indexPath)
+    }
+}
+
+let activitySectionPopulator = OFASectionPopulator(
+    parentView: self.tableView,
+    dataProvider: activityDataProvider as! OFADataProvider!,
+    cellIdentifier: cellIdentifier,
+    cellConfigurator:cellConfigurator
+)
+
+activitySectionPopulator.objectOnCellSelected = {[unowned self](obj :AnyObject!, cell: UIView!, indexPath:NSIndexPath!) -> Void in
+    if let theCell = cell as? ActivityTableCell, activity = obj as? Activity, c = self.activitySelectedOnCell{
+        c(obj: activity, cell: theCell, indexPath: indexPath)
+    }
+    if let activityCell = cell as? UITableViewCell{
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+activitySectionPopulator.heightForCellAtIndexPath = {[unowned self](obj: AnyObject!, indexPath:NSIndexPath!) -> CGFloat in
+    return ActivityTableCell.heightForActivity(self.activities[indexPath.row], width: self.tableView.frame.size.width)
+}
+
+
+self.activityTableViewPopulator = OFAViewPopulator(sectionPopulators: [activitySectionPopulator])
+self.activityTableViewPopulator!.didScroll = {(scrollView:UIScrollView!) -> Void in
+    let endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height
+    if (endScrolling >= scrollView.contentSize.height - 400) {
+        self.loadMore()
+    }
+}
+
+
+```
+
 
 ## Install
 
