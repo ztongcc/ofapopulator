@@ -100,7 +100,7 @@
 
 -(BOOL)respondsToSelector:(SEL)aSelector
 {
-    return [[self class] instancesRespondToSelector: aSelector];
+    return [[[self activeTaget] class] instancesRespondToSelector: aSelector];
 }
 
 -(id<OFADataProvider>)dataProvider
