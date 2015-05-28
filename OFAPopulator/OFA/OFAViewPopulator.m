@@ -17,6 +17,9 @@
 @property (nonatomic, weak) UITableView    *parentView;
 @property (nonatomic, strong) NSArray *populators;
 @property (nonatomic, assign) NSUInteger currentSection;
+
+@property (nonatomic, copy) void (^didScroll)(UIScrollView *scrollView);
+
 @end
 
 @implementation OFATableViewPopulator
@@ -204,7 +207,18 @@
 {
     return NO;
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    if (self.didScroll) {
+        self.didScroll(self.parentView);
+    }
+}
+
 @end
+
+
+
 
 #pragma mark -
 
@@ -267,6 +281,7 @@
 @interface OFAViewPopulator ()
 
 @property (nonatomic, strong) id privatePopulator;
+@property (nonatomic, copy) void (^didScroll)(UIScrollView *scrollView);
 @end
 
 @implementation OFAViewPopulator
