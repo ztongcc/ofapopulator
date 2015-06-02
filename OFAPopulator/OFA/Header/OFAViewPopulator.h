@@ -10,4 +10,5 @@
 
 @interface OFAViewPopulator : NSProxy <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 - (instancetype)initWithSectionPopulators:(NSArray *)populators;
+@property (nonatomic, copy) void (^didScroll)(UIScrollView *scrollView);
 @end

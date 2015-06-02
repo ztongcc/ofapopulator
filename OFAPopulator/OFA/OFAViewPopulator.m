@@ -281,7 +281,6 @@
 @interface OFAViewPopulator ()
 
 @property (nonatomic, strong) id privatePopulator;
-@property (nonatomic, copy) void (^didScroll)(UIScrollView *scrollView);
 @end
 
 @implementation OFAViewPopulator
