@@ -215,6 +215,8 @@
     }
 }
 
+
+
 @end
 
 
@@ -311,8 +313,15 @@
 
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
-    if ([[self privatePopulator] respondsToSelector:invocation.selector]) {
+    if ([[[self privatePopulator] class] instancesRespondToSelector:invocation.selector]) {
         [invocation invokeWithTarget:[self privatePopulator]];
+    }
+}
+
+-(void)setDidScroll:(void (^)(UIScrollView *))didScroll
+{    
+    if ([self.privatePopulator isKindOfClass:[OFATableViewPopulator class]]) {
+        [(OFATableViewPopulator *)self.privatePopulator setDidScroll:didScroll];
     }
 }
 
