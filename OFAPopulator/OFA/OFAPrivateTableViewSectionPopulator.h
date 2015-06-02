@@ -13,6 +13,9 @@
 
 @property (nonatomic, weak, readonly) UIView *parentView;
 @property (nonatomic, copy) void (^cellConfigurator)(id, UITableViewCell *, NSIndexPath *);
+@property (nonatomic, copy) BOOL (^shouldHighlightCell)(id, UITableViewCell *, NSIndexPath *);
+@property (nonatomic, copy) BOOL (^shouldShowSelection)(id, UITableViewCell *, NSIndexPath *);
+
 @property (nonatomic, copy) UIView *(^header)(NSUInteger section);
 @property (nonatomic, copy) UIView *(^footer)(NSUInteger section);
 

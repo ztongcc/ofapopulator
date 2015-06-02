@@ -34,7 +34,6 @@
                                                                                                             cellIdentifier:^NSString * (id obj, NSIndexPath *indexPath){return indexPath.row % 2 ? @"Section1_1" : @"Section1_2";}
                                                                                                           cellConfigurator:^(id obj, UITableViewCell *cell, NSIndexPath *indexPath)
     {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj];
         cell.textLabel.backgroundColor = [UIColor clearColor];
     }];
@@ -80,6 +79,10 @@
                                animated:YES
                              completion:nil];
         }
+    };
+    
+    section1Populator.shouldShowSelection = ^BOOL(id obj, UITableViewCell *cell, NSIndexPath *indexPath){
+        return (indexPath.row % 3 == 0);
     };
     
     OFASectionPopulator *section2Populator = [[OFAReorderSectionPopulator alloc] initWithParentView:self.tableView

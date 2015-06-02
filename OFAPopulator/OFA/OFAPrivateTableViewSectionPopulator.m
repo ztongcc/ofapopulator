@@ -15,6 +15,8 @@
 @implementation OFAPrivateTableViewSectionPopulator
 
 @synthesize  heightForCellAtIndexPath = _heightForCellAtIndexPath;
+@synthesize shouldHighlightCell = _shouldHighlightCell;
+@synthesize shouldShowSelection = _shouldShowSelection;
 @synthesize header = _header;
 @synthesize footer = _footer;
 
@@ -58,6 +60,21 @@
     self.cellConfigurator([self.dataProvider sectionObjects][indexPath.row], cell, indexPath);
     return cell;
 }
+
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (self.shouldShowSelection) {
+        if (!self.shouldShowSelection([self.dataProvider sectionObjects][indexPath.row],
+                                     [tableView cellForRowAtIndexPath:indexPath],
+                                     indexPath)) {
+            [[tableView cellForRowAtIndexPath:indexPath] setSelectionStyle:UITableViewCellSelectionStyleNone];
+        }
+    }
+    return indexPath;
+}
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -123,10 +140,22 @@
     return nil;
 }
 
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.shouldHighlightCell) {
+        return self.shouldHighlightCell([self.dataProvider sectionObjects][indexPath.row],
+                                        [tableView cellForRowAtIndexPath:indexPath],
+                                        indexPath);
+    }
+    return YES;
+}
+
+
 -(void)setHeightForCellAtIndexPath:(CGFloat (^)(id, NSIndexPath *))heightForCellAtIndexPath
 {
     _heightForCellAtIndexPath = heightForCellAtIndexPath;
 }
+
 
 -(void)setHeader:(UIView *(^)(NSUInteger))header
 {

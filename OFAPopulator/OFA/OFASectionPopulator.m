@@ -74,6 +74,17 @@
     [[self activeTaget] setHeightForCellAtIndexPath:heightForCellAtIndexPath];
 }
 
+-(void)setShouldHighlightCell:(BOOL (^)(id, UITableViewCell *, NSIndexPath *))shouldHighlightCell
+{
+    [[self activeTaget] setShouldHighlightCell:shouldHighlightCell];
+
+}
+
+-(void)setShouldShowSelection:(BOOL (^)(id, UITableViewCell *, NSIndexPath *))shouldShowSelection
+{
+    [[self activeTaget] setShouldShowSelection:shouldShowSelection];
+}
+
 -(void)setHeader:(UIView *(^)(NSUInteger))headerForSection
 {
     [[self activeTaget] setHeader:headerForSection];

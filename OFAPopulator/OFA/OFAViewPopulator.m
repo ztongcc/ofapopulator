@@ -58,6 +58,14 @@
 }
 
 
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.currentSection = indexPath.section;
+    
+    id<OFASectionPopulator> pop = self.populators[indexPath.section];
+    return [pop tableView:tableView willSelectRowAtIndexPath:indexPath];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.currentSection = indexPath.section;
