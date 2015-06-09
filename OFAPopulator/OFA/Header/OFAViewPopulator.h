@@ -8,9 +8,14 @@
 
 @import UIKit;
 
+@interface OFATableViewPopulator : NSObject <UITableViewDelegate, UITableViewDataSource>
+@end
+
+
+
 @interface OFAViewPopulator : NSProxy <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 - (instancetype)initWithSectionPopulators:(NSArray *)populators;
-- (instancetype)initWithSectionPopulators:(NSArray *)populators dataSourceBaseClass:(Class)cls;
+- (instancetype)initWithSectionPopulators:(NSArray *)populators populatorClass:(Class)cls;
 
 @property (nonatomic, copy) void (^didScroll)(UIScrollView *scrollView);
 @end

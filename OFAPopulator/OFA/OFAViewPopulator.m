@@ -13,7 +13,7 @@
 
 #pragma mark -
 
-@interface OFATableViewPopulator : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface OFATableViewPopulator ()
 @property (nonatomic, weak) UITableView    *parentView;
 @property (nonatomic, strong) NSArray *populators;
 @property (nonatomic, assign) NSUInteger currentSection;
@@ -295,15 +295,15 @@
 
 @implementation OFAViewPopulator
 
--(instancetype)initWithSectionPopulators:(NSArray *)populators
-                     dataSourceBaseClass:(Class)cls
+- (instancetype)initWithSectionPopulators:(NSArray *)populators populatorClass:(Class)cls
 {
-    NSSet *sectionParenView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
-    if ([sectionParenView count] != 1) {
+    NSAssert(cls, @"populatorClass must not be Nil");
+    NSSet *sectionParentView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
+    if ([sectionParentView count] != 1) {
         NSAssert(NO, @"all populators must have the same parent view");
         return nil;
     }
-    UIView *parentView = [sectionParenView anyObject];
+    UIView *parentView = [sectionParentView anyObject];
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
             self.privatePopulator = [[cls alloc] initWithParentView:(UITableView *)parentView
@@ -319,22 +319,23 @@
 
 - (instancetype)initWithSectionPopulators:(NSArray *)populators
 {
-    NSSet *sectionParenView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
-    if ([sectionParenView count] != 1) {
+    NSSet *sectionParentView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
+    if ([sectionParentView count] != 1) {
         NSAssert(NO, @"all populators must have the same parent view");
         return nil;
     }
-    UIView *parentView = [sectionParenView anyObject];
+    UIView *parentView = [sectionParentView anyObject];
+    
+    Class populatorClass;
+    
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
-            return [self initWithSectionPopulators:populators dataSourceBaseClass:[OFATableViewPopulator class]];
+            populatorClass = [OFATableViewPopulator class];
         } else if ([parentView isKindOfClass:[UICollectionView class]]) {
-            return [self initWithSectionPopulators:populators dataSourceBaseClass:[OFACollectionViewPopulator class]];
+            populatorClass = [OFACollectionViewPopulator class];
         }
     }
-    return self;
-    
-    
+    return [self initWithSectionPopulators:populators populatorClass:populatorClass];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
