@@ -294,6 +294,29 @@
 @end
 
 @implementation OFAViewPopulator
+
+-(instancetype)initWithSectionPopulators:(NSArray *)populators
+                     dataSourceBaseClass:(Class)cls
+{
+    NSSet *sectionParenView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
+    if ([sectionParenView count] != 1) {
+        NSAssert(NO, @"all populators must have the same parent view");
+        return nil;
+    }
+    UIView *parentView = [sectionParenView anyObject];
+    if (self) {
+        if ([parentView isKindOfClass:[UITableView class]]) {
+            self.privatePopulator = [[cls alloc] initWithParentView:(UITableView *)parentView
+                                                                    sectionPopulators:populators];
+        } else if ([parentView isKindOfClass:[UICollectionView class]]) {
+            self.privatePopulator = [[cls alloc] initWithParentView:(UICollectionView *)parentView
+                                                                         sectionPopulators:populators];
+        }
+    }
+    return self;
+}
+
+
 - (instancetype)initWithSectionPopulators:(NSArray *)populators
 {
     NSSet *sectionParenView = [NSSet setWithArray:[populators valueForKey:@"parentView"]];
@@ -304,14 +327,14 @@
     UIView *parentView = [sectionParenView anyObject];
     if (self) {
         if ([parentView isKindOfClass:[UITableView class]]) {
-            self.privatePopulator = [[OFATableViewPopulator alloc] initWithParentView:(UITableView *)parentView
-                                                                    sectionPopulators:populators];
+            return [self initWithSectionPopulators:populators dataSourceBaseClass:[OFATableViewPopulator class]];
         } else if ([parentView isKindOfClass:[UICollectionView class]]) {
-            self.privatePopulator = [[OFACollectionViewPopulator alloc] initWithParentView:(UICollectionView *)parentView
-                                                                         sectionPopulators:populators];
+            return [self initWithSectionPopulators:populators dataSourceBaseClass:[OFACollectionViewPopulator class]];
         }
     }
     return self;
+    
+    
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
