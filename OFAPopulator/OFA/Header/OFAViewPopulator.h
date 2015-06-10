@@ -9,11 +9,16 @@
 @import UIKit;
 
 @interface OFATableViewPopulator : NSObject <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong, readonly) NSArray *populators;
+
 @end
 
 
 
 @interface OFAViewPopulator : NSProxy <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (nonatomic, strong, readonly) id privatePopulator;
+
 - (instancetype)initWithSectionPopulators:(NSArray *)populators;
 - (instancetype)initWithSectionPopulators:(NSArray *)populators populatorClass:(Class)cls;
 
