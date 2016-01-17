@@ -10,6 +10,4 @@
 
 @protocol OFADataProvider <NSObject>
 @property (nonatomic, strong) NSArray *sectionObjects;
-- (void)dataAvailable:(void (^)(void))available;
-
 @end

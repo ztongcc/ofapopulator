@@ -29,13 +29,6 @@
     if (self = [super init]) {
         self.dataProvider    = dataProvider;
         self.parentTableView = parentView;
-        __weak typeof(self) weakSelf = self;
-        [dataProvider dataAvailable:^{
-            typeof(weakSelf) self = weakSelf;
-            if (self) {
-                [self.parentTableView reloadData];
-            }
-        }];
         _cellConfigurator   = cellConfigurator;
         self.cellIdentifier = cellIdentifier;
     }

@@ -27,13 +27,6 @@
         self.parentCollectionView   = parentView;
         self.dataProvider           = dataProvider;
         
-        __weak typeof(self) weakSelf = self;
-        [dataProvider dataAvailable:^{
-            typeof(weakSelf) self = weakSelf;
-            if (self) {
-                [self.parentView reloadData];
-            }
-        }];
         _cellConfigurator   = cellConfigurator;
         self.cellIdentifier = cellIdentifier;
     }
